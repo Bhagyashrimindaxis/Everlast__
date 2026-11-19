@@ -1,0 +1,628 @@
+/* ==========================================================================
+   EVERLAST - FOOTER DESIGN (Project Theme: Black, White & Red - NO BLUE)
+   4-Column Layout:
+   - Col 1: White Card Logo, Description, 'Review Us on Google' button (Red), 'Follow Us'
+   - Col 2: 'Usefull Links' with Red chevron bullets
+   - Col 3: 'Contact Info' with Red phone, email, location pin icons
+   - Col 4: 'Location Map' with embedded Google Map card
+   - Bottom: Copyright bar & floating action stack (Red Call, WhatsApp, Dark/Red Scroll Top)
+   ========================================================================== */
+
+/* --- Footer Main Wrapper --- */
+footer.site-footer {
+  background: linear-gradient(135deg, #090b0e 0%, #111419 50%, #090b0e 100%);
+  color: #e2e8f0;
+  padding: 55px 20px 30px;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  clear: both;
+  display: block;
+}
+
+footer.site-footer .footer-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://www.transparenttextures.com/patterns/hexellence.png');
+  opacity: 0.04;
+  background-size: 200px;
+  pointer-events: none;
+}
+
+/* Eliminate any unwanted gaps or white space before or after footer */
+body {
+  margin-bottom: 0 !important;
+}
+
+section:last-of-type,
+main > *:last-child,
+.wrapper.bg:last-of-type {
+  margin-bottom: 0 !important;
+}
+
+/* --- 4-Column Grid Container --- */
+.site-footer .footer-container {
+  display: grid;
+  grid-template-columns: 1.35fr 0.9fr 1.15fr 1.25fr;
+  gap: 36px;
+  max-width: 1340px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* --- Column 1: Logo & Review & Social --- */
+.footer-col-about {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.footer-logo-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 10px 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  max-width: 200px;
+}
+
+.footer-logo-card img {
+  max-height: 46px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.footer-about-text {
+  color: #a0aec0;
+  font-size: 13.5px;
+  line-height: 1.65;
+  margin: 0 0 18px 0;
+  max-width: 340px;
+}
+
+/* Review Button: Project Red Theme */
+.footer-review-btn {
+  background: linear-gradient(135deg, #8b1a1a 0%, #a52a2a 100%);
+  color: #ffffff !important;
+  padding: 10px 22px;
+  border-radius: 10px;
+  font-size: 13.5px;
+  font-weight: 600;
+  text-decoration: none !important;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 22px;
+  box-shadow: 0 4px 14px rgba(139, 26, 26, 0.4);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-review-btn:hover {
+  background: linear-gradient(135deg, #a52a2a 0%, #8b1a1a 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(139, 26, 26, 0.6);
+}
+
+.footer-review-btn .star-icon {
+  font-size: 14px;
+  color: #ffc107;
+}
+
+.footer-follow-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer-follow-label {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.footer-social-icons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Social Boxes: White Icons on Dark Card, Red on Hover */
+.footer-social-box {
+  width: 36px;
+  height: 36px;
+  background: #19202a;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff !important;
+  font-size: 14px;
+  text-decoration: none !important;
+  transition: all 0.3s ease;
+}
+
+.footer-social-box:hover {
+  background: #8b1a1a;
+  color: #ffffff !important;
+  border-color: #8b1a1a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(139, 26, 26, 0.45);
+}
+
+/* --- Common Column Headers --- */
+.footer-col-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 20px 0;
+  letter-spacing: 0.3px;
+  position: relative;
+}
+
+/* --- Column 2: Useful Links (Red Chevron Bullets) --- */
+.footer-links-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links-list li {
+  margin-bottom: 12px;
+}
+
+.footer-links-list li a {
+  color: #cbd5e1;
+  text-decoration: none !important;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.25s ease;
+}
+
+.footer-links-list li a i {
+  color: #8b1a1a;
+  font-size: 11px;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.footer-links-list li a:hover {
+  color: #ffffff;
+  padding-left: 5px;
+}
+
+.footer-links-list li a:hover i {
+  color: #c53030;
+  transform: translateX(2px);
+}
+
+/* --- Column 3: Contact Info (Red Icons Matching Everlast Brand) --- */
+.footer-contact-block {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.footer-contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.footer-contact-icon {
+  color: #8b1a1a;
+  font-size: 15px;
+  margin-top: 3px;
+  flex-shrink: 0;
+  width: 18px;
+  text-align: center;
+}
+
+.footer-contact-text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.footer-contact-text a,
+.footer-contact-text span {
+  color: #cbd5e1;
+  font-size: 14px;
+  line-height: 1.5;
+  text-decoration: none !important;
+  transition: color 0.25s ease;
+}
+
+.footer-contact-text a:hover {
+  color: #ffffff;
+}
+
+/* --- Column 4: Location Map --- */
+.footer-map-card {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: #111;
+  width: 100%;
+}
+
+.footer-map-card iframe {
+  width: 100% !important;
+  height: 240px !important;
+  display: block;
+  border: 0;
+}
+
+/* --- Bottom Copyright Bar --- */
+.site-footer .footer-bottom-bar {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  margin-top: 45px;
+  padding-top: 24px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.site-footer .footer-copy-text {
+  font-size: 13.5px;
+  color: #94a3b8;
+  letter-spacing: 0.2px;
+}
+
+.site-footer .footer-dev-text {
+  font-size: 12.5px;
+  color: #64748b;
+  margin-top: 6px;
+}
+
+.site-footer .footer-dev-text a {
+  color: #cbd5e1;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.25s ease;
+}
+
+.site-footer .footer-dev-text a:hover {
+  color: #8b1a1a;
+}
+
+/* --- Floating Action Stack (Call, WhatsApp, Scroll Top) - NO BLUE --- */
+.floating-widget-stack {
+  position: fixed;
+  bottom: 25px;
+  right: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: rgba(15, 23, 42, 0.92);
+  padding: 6px;
+  border-radius: 32px;
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 9999;
+}
+
+.floating-action-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff !important;
+  font-size: 18px;
+  text-decoration: none !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.floating-action-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+}
+
+/* Call Button: Red Theme */
+.floating-action-btn.btn-call {
+  background: linear-gradient(135deg, #8b1a1a 0%, #a52a2a 100%);
+  box-shadow: 0 4px 14px rgba(139, 26, 26, 0.4);
+}
+
+.floating-action-btn.btn-call:hover {
+  background: linear-gradient(135deg, #a52a2a 0%, #8b1a1a 100%);
+}
+
+/* WhatsApp: Green */
+.floating-action-btn.btn-wa {
+  background: #25d366;
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
+}
+
+/* Scroll To Top: Red Theme */
+.floating-action-btn.btn-scroll-top {
+  background: linear-gradient(135deg, #8b1a1a 0%, #a52a2a 100%);
+  box-shadow: 0 4px 14px rgba(139, 26, 26, 0.4);
+}
+
+.floating-action-btn.btn-scroll-top:hover {
+  background: linear-gradient(135deg, #a52a2a 0%, #8b1a1a 100%);
+}
+
+/* Hide legacy floating elements to prevent duplicates */
+#scrollTopBtn,
+.whatsapp,
+div[style*="z-index: 1000"][style*="bottom: 30px"],
+div[style*="z-index:1000"][style*="bottom:30px"] {
+  display: none !important;
+}
+
+/* --- Responsive Layout for Tablets & Mobile --- */
+@media (max-width: 1024px) {
+  .site-footer .footer-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+  }
+}
+
+@media (max-width: 640px) {
+  footer.site-footer {
+    padding: 45px 16px 25px;
+  }
+
+  .site-footer .footer-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .footer-about-text {
+    max-width: 100%;
+  }
+
+  .footer-review-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .footer-map-card iframe {
+    height: 220px !important;
+  }
+
+  .floating-widget-stack {
+    bottom: 18px;
+    right: 12px;
+    padding: 5px;
+    gap: 6px;
+  }
+
+  .floating-action-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+}
+
+/* ==========================================================================
+   LOCATION WE SERVE ACCORDION SECTION (Project Theme: Black, White & Red)
+   ========================================================================== */
+
+.location-serve-section {
+  width: 100%;
+  padding: 30px 20px 60px;
+  background: transparent;
+  box-sizing: border-box;
+}
+
+.location-serve-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* --- Red Gradient Header Bar --- */
+.location-toggle-bar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, #8b1a1a 0%, #a52a2a 100%);
+  color: #ffffff;
+  padding: 16px 26px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(139, 26, 26, 0.28);
+  transition: all 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+  outline: none;
+}
+
+.location-toggle-bar:hover {
+  background: linear-gradient(135deg, #a52a2a 0%, #b82d2d 100%);
+  box-shadow: 0 6px 20px rgba(139, 26, 26, 0.38);
+  transform: translateY(-2px);
+}
+
+.location-bar-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.location-bar-title i {
+  font-size: 17px;
+  color: #ffffff;
+}
+
+.location-bar-toggle-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13.5px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+}
+
+.location-bar-toggle-text i {
+  font-size: 13px;
+  transition: transform 0.3s ease;
+}
+
+/* --- Collapsible Panel --- */
+.location-panel {
+  max-height: 1200px;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.3s ease, margin 0.3s ease;
+  opacity: 1;
+  margin-top: 16px;
+}
+
+.location-panel.collapsed {
+  max-height: 0 !important;
+  opacity: 0;
+  margin-top: 0;
+  pointer-events: none;
+}
+
+/* --- Card Box --- */
+.location-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 35px 45px 30px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+  border: 1px solid #e5e7eb;
+  border-top: 3px solid #8b1a1a;
+}
+
+/* City Heading */
+.location-city-heading {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 700;
+  color: #8b1a1a;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.location-city-heading i {
+  font-size: 19px;
+  color: #8b1a1a;
+}
+
+/* Products 2-Column Grid */
+.location-products-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 50px;
+}
+
+.location-products-col {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.location-products-col li {
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.location-products-col li a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 6px;
+  color: #334155;
+  text-decoration: none;
+  font-size: 14.5px;
+  font-weight: 500;
+  transition: all 0.25s ease;
+  font-family: 'Poppins', sans-serif;
+}
+
+.location-bullet {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #8b1a1a;
+  flex-shrink: 0;
+  transition: transform 0.25s ease, background-color 0.25s ease;
+}
+
+.location-products-col li a:hover {
+  color: #8b1a1a;
+  padding-left: 10px;
+}
+
+.location-products-col li a:hover .location-bullet {
+  transform: scale(1.4);
+  background-color: #c53030;
+}
+
+/* --- Responsive Layout for Mobile/Tablet --- */
+@media (max-width: 768px) {
+  .location-serve-section {
+    padding: 20px 15px 45px;
+  }
+
+  .location-toggle-bar {
+    padding: 14px 18px;
+  }
+
+  .location-bar-title {
+    font-size: 13.5px;
+    gap: 8px;
+  }
+
+  .location-bar-toggle-text {
+    font-size: 12px;
+  }
+
+  .location-card {
+    padding: 25px 20px 20px;
+  }
+
+  .location-city-heading {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  .location-products-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .location-products-col li a {
+    font-size: 13.5px;
+    padding: 10px 4px;
+  }
+}

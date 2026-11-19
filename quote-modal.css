@@ -1,0 +1,371 @@
+/* ==========================================================================
+   EVERLAST - GET A QUOTE MODAL & NAVBAR BUTTON STYLES
+   Project Theme: Everlast Red (#8b1a1a) & Clean Modern Industrial Theme
+   ========================================================================== */
+
+/* --- Navbar 'Get Quote' Button --- */
+.nav-links > li > a.btn-get-quote,
+.btn-get-quote {
+  background: #8b1a1a !important;
+  color: #ffffff !important;
+  padding: 8px 22px !important;
+  border-radius: 50px !important;
+  font-weight: 600 !important;
+  font-size: 13.5px !important;
+  letter-spacing: 0.3px !important;
+  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  border: 1.5px solid #8b1a1a !important;
+  box-shadow: 0 4px 12px rgba(139, 26, 26, 0.35) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  cursor: pointer !important;
+  white-space: nowrap !important;
+}
+
+.nav-links > li > a.btn-get-quote:hover,
+.btn-get-quote:hover {
+  background: #a52a2a !important;
+  border-color: #a52a2a !important;
+  color: #ffffff !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 18px rgba(139, 26, 26, 0.45) !important;
+}
+
+.nav-links > li > a.btn-get-quote:active,
+.btn-get-quote:active {
+  transform: translateY(0) !important;
+  box-shadow: 0 2px 8px rgba(139, 26, 26, 0.3) !important;
+}
+
+@media (max-width: 768px) {
+  .nav-links > li > a.btn-get-quote,
+  .btn-get-quote {
+    width: 100% !important;
+    text-align: center !important;
+    margin-top: 15px !important;
+    padding: 12px 20px !important;
+  }
+}
+
+/* --- Modal Backdrop Overlay --- */
+.quote-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 15, 25, 0.7);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  overflow-y: auto;
+}
+
+.quote-modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* --- Modal Window Container --- */
+.quote-modal-box {
+  background: #ffffff;
+  width: 100%;
+  max-width: 580px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(0, 0, 0, 0.05);
+  transform: scale(0.92) translateY(20px);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  font-family: 'Poppins', sans-serif;
+  color: #1f2937;
+  position: relative;
+  margin: auto;
+}
+
+.quote-modal-overlay.active .quote-modal-box {
+  transform: scale(1) translateY(0);
+}
+
+/* --- Modal Header --- */
+.quote-modal-header {
+  background: #1e2633;
+  color: #ffffff;
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.quote-modal-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+.quote-modal-title i {
+  color: #8b1a1a;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 7px;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.quote-modal-close {
+  background: rgba(255, 255, 255, 0.12);
+  border: none;
+  color: #ffffff;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.quote-modal-close:hover {
+  background: #8b1a1a;
+  color: #ffffff;
+  transform: rotate(90deg);
+}
+
+/* --- Modal Body & Form Layout --- */
+.quote-modal-body {
+  padding: 24px 26px 28px;
+  background: #ffffff;
+}
+
+.quote-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.quote-form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.quote-form-group.full-width {
+  grid-column: 1 / -1;
+  margin-bottom: 18px;
+}
+
+.quote-form-label {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 7px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.quote-form-label .req {
+  color: #dc2626;
+  font-weight: 700;
+}
+
+.quote-form-control {
+  width: 100%;
+  padding: 10px 14px;
+  background: #ffffff;
+  border: 1.5px solid #d1d5db;
+  border-radius: 10px;
+  font-size: 14px;
+  font-family: 'Poppins', sans-serif;
+  color: #111827;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+}
+
+.quote-form-control:focus {
+  outline: none;
+  border-color: #8b1a1a;
+  box-shadow: 0 0 0 3px rgba(139, 26, 26, 0.15);
+}
+
+.quote-form-control::placeholder {
+  color: #9ca3af;
+  font-size: 13px;
+}
+
+select.quote-form-control {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234b5563' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 16px;
+  padding-right: 36px;
+}
+
+textarea.quote-form-control {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* Phone input with India country code */
+.quote-phone-wrap {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.quote-country-code {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #f3f4f6;
+  border: 1.5px solid #d1d5db;
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #374151;
+  white-space: nowrap;
+}
+
+.quote-phone-wrap .quote-form-control {
+  flex: 1;
+}
+
+/* Submit Action Button */
+.quote-form-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 22px;
+}
+
+.quote-submit-btn {
+  background: #8b1a1a;
+  color: #ffffff;
+  border: none;
+  border-radius: 50px;
+  padding: 13px 36px;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 6px 18px rgba(139, 26, 26, 0.35);
+  transition: all 0.3s ease;
+}
+
+.quote-submit-btn:hover {
+  background: #a52a2a;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(139, 26, 26, 0.5);
+}
+
+.quote-submit-btn:active {
+  transform: translateY(0);
+}
+
+/* Success notification message */
+.quote-success-banner {
+  display: none;
+  padding: 14px 18px;
+  margin-bottom: 18px;
+  background: #ecfdf5;
+  border: 1px solid #10b981;
+  border-radius: 10px;
+  color: #065f46;
+  font-size: 13.5px;
+  font-weight: 500;
+  text-align: center;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .quote-form-row {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-bottom: 14px;
+  }
+  
+  .quote-modal-body {
+    padding: 20px 18px 24px;
+  }
+
+  .quote-modal-header {
+    padding: 16px 18px;
+  }
+
+  .quote-modal-title {
+    font-size: 16.5px;
+  }
+
+  .quote-submit-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* --- Validation Error Styles (Exact Match to Reference Image 3) --- */
+.quote-form-control.is-invalid {
+  border-color: #ef4444 !important;
+  background-color: #fff8f8 !important;
+  box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.15) !important;
+}
+
+.quote-phone-wrap.is-invalid .quote-form-control,
+.quote-phone-wrap.is-invalid .quote-country-code {
+  border-color: #ef4444 !important;
+  background-color: #fff8f8 !important;
+  box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.15) !important;
+}
+
+.quote-field-error {
+  display: none;
+  color: #ef4444;
+  font-size: 12px;
+  font-weight: 500;
+  margin-top: 5px;
+  align-items: center;
+  gap: 5px;
+  line-height: 1.3;
+}
+
+.quote-field-error.show {
+  display: flex !important;
+}
+
+.quote-err-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  background: #ef4444;
+  color: #ffffff;
+  border-radius: 50%;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1;
+  flex-shrink: 0;
+}
+

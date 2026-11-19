@@ -1,0 +1,323 @@
+/* Product Detail Page Styling - Everlast Pune Theme (Full Width Layout) */
+:root {
+  --primary-red: #8b1a18;
+  --primary-red-hover: #a52a2a;
+  --dark-charcoal: #111827;
+  --text-gray: #4b5563;
+  --text-dark: #1f2937;
+  --bg-light: #ffffff;
+  --border-color: #e5e7eb;
+}
+
+.detail-main-wrapper {
+  background-color: #ffffff;
+  padding: 15px 0 45px;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  width: 100%;
+}
+
+.detail-card-container {
+  width: 95%;
+  max-width: 1420px;
+  margin: 0 auto;
+  background: #ffffff;
+  border: none;
+  box-shadow: none;
+  padding: 10px 0;
+}
+
+/* Top Showcase: Image + Intro */
+.detail-top-grid {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 35px;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.detail-img-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.detail-img-box {
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 16px;
+  background: #fafafa;
+  height: 330px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.02);
+}
+
+.detail-img-box img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.detail-img-box:hover img {
+  transform: scale(1.03);
+}
+
+/* Action Buttons (Proper Center Placement) */
+.detail-action-btns {
+  display: flex;
+  gap: 16px;
+  margin: 28px auto 10px;
+  max-width: 460px;
+  justify-content: center;
+  width: 100%;
+}
+
+.btn-whatsapp-action {
+  flex: 1;
+  background-color: #25d366;
+  color: #ffffff !important;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 12px 14px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+  box-shadow: 0 2px 6px rgba(37, 211, 102, 0.25);
+  transition: background-color 0.2s, transform 0.15s;
+}
+
+.btn-whatsapp-action:hover {
+  background-color: #20ba5a;
+  transform: translateY(-1px);
+}
+
+.btn-enquiry-action {
+  flex: 1;
+  background: linear-gradient(135deg, #8b1a18, #a52a2a);
+  color: #ffffff !important;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 12px 14px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(139, 26, 24, 0.25);
+  transition: opacity 0.2s, transform 0.15s;
+}
+
+.btn-enquiry-action:hover {
+  opacity: 0.93;
+  transform: translateY(-1px);
+}
+
+/* Top Intro Text (Vertically Centered with Image) */
+.detail-intro-column {
+  color: var(--text-dark);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.detail-lead-heading {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--dark-charcoal);
+  margin-bottom: 12px;
+  line-height: 1.35;
+}
+
+.detail-intro-column p {
+  font-size: 15px;
+  line-height: 1.75;
+  color: #4b5563;
+  margin-bottom: 14px;
+}
+
+/* Section Header Bars (Spans Full Width of Container) */
+.detail-section-bar {
+  background: #f1f5f9;
+  border-left: 4px solid var(--primary-red);
+  padding: 11px 18px;
+  margin: 32px 0 16px;
+  border-radius: 0 4px 4px 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.detail-section-bar h2,
+.detail-section-bar h3 {
+  font-size: 18.5px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+  letter-spacing: -0.2px;
+}
+
+/* Prose Paragraphs */
+.detail-prose p {
+  font-size: 15px;
+  line-height: 1.75;
+  color: #374151;
+  margin-bottom: 14px;
+}
+
+/* 2-Column Grid for Features, Applications, Why Choose */
+.detail-grid-2col {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px 35px;
+  margin: 16px 0 24px;
+  list-style: none;
+  padding: 0;
+}
+
+.detail-grid-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: #374151;
+}
+
+.detail-grid-bullet {
+  width: 6px;
+  height: 6px;
+  min-width: 6px;
+  background-color: var(--primary-red);
+  margin-top: 8px;
+  border-radius: 1px;
+}
+
+.detail-grid-text {
+  flex: 1;
+}
+
+.detail-grid-text strong {
+  color: #0f172a;
+  font-weight: 600;
+}
+
+/* FAQs Accordion Group */
+.faq-accordion-group {
+  margin-top: 18px;
+  width: 100%;
+}
+
+.faq-card {
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  overflow: hidden;
+  background: #ffffff;
+  transition: border-color 0.2s;
+}
+
+.faq-card.active {
+  border-color: #cbd5e1;
+}
+
+.faq-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 20px;
+  font-weight: 600;
+  font-size: 15px;
+  color: #1e293b;
+  text-align: left;
+  background: #ffffff;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.faq-card.active .faq-header {
+  color: var(--primary-red);
+  background: #fafbfc;
+}
+
+.faq-header:hover {
+  background: #f8fafc;
+}
+
+.faq-chevron {
+  font-size: 13px;
+  color: var(--primary-red);
+  transition: transform 0.25s ease;
+}
+
+.faq-card.active .faq-chevron {
+  transform: rotate(180deg);
+}
+
+/* Reliable Answer Display: No max-height truncation */
+.faq-body {
+  display: none;
+  background: #fafbfc;
+  color: #4b5563;
+  font-size: 14.5px;
+  line-height: 1.68;
+  border-top: 1px solid #f1f5f9;
+  padding: 16px 22px 20px;
+  box-sizing: border-box;
+}
+
+.faq-body p {
+  margin: 0;
+  padding: 0;
+  color: #4b5563;
+  font-size: 14.5px;
+  line-height: 1.68;
+}
+
+.faq-card.active .faq-body {
+  display: block;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .detail-top-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-img-box {
+    height: 300px;
+  }
+
+  .detail-grid-2col {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  .detail-action-btns {
+    flex-direction: column;
+  }
+
+  .detail-section-bar h2,
+  .detail-section-bar h3 {
+    font-size: 16.5px;
+  }
+
+  .faq-header {
+    font-size: 14px;
+    padding: 12px 16px;
+  }
+
+  .faq-body {
+    padding: 14px 16px 18px;
+  }
+}
