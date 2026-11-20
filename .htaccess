@@ -1,0 +1,6 @@
+# 301 Redirect old About.html to new about-us.html
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  RewriteRule ^About\.html$ /about-us.html [R=301,L,NC]
+</IfModule>
