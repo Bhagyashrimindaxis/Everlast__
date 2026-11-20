@@ -28,4 +28,5 @@
   RewriteRule ^tree\-grating\.html$ /concrete-tree-gratings-and-guards-in-pune.html [R=301,L,NC]
   RewriteRule ^U_Dtrain\.html$ /precast-u-drain-in-pune.html [R=301,L,NC]
   RewriteRule ^u\-drains\-manufacturer\-in\-supplier\-pune\.html$ /u-drains-manufacturer-supplier-in-pune.html [R=301,L,NC]
+  RewriteRule ^shot\-blast\-pavers\-manufacturer\-supplier\-in\-pune\.html$ /short-blast-pavers-manufacturer-supplier-in-pune.html [R=301,L,NC]
 </IfModule>
