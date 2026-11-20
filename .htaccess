@@ -1,6 +1,31 @@
-# 301 Redirect old About.html to new about-us.html
+# 301 Redirects for renamed URLs
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
   RewriteRule ^About\.html$ /about-us.html [R=301,L,NC]
+  RewriteRule ^Bollard\.html$ /rcc-precast-bollard-in-pune.html [R=301,L,NC]
+  RewriteRule ^chamber_cover\.html$ /rcc-chamber-cover-in-pune.html [R=301,L,NC]
+  RewriteRule ^Chequered_Tiles\.html$ /chequered-tiles-in-pune.html [R=301,L,NC]
+  RewriteRule ^Concrete_Kerbstone\.html$ /concrete-kerbstone-in-pune.html [R=301,L,NC]
+  RewriteRule ^Concrete_Manhole_Cover\.html$ /concrete-manhole-covers-and-drain-covers-in-pune.html [R=301,L,NC]
+  RewriteRule ^contact\.html$ /contact-us.html [R=301,L,NC]
+  RewriteRule ^costomized\-products\.html$ /customized-precast-concrete-products-in-pune.html [R=301,L,NC]
+  RewriteRule ^eco\-paver\.html$ /eco-pavers-grass-paver-blocks-in-pune.html [R=301,L,NC]
+  RewriteRule ^extra\-heavy\-duty\.html$ /extra-heavy-duty-chamber-cover-in-pune.html [R=301,L,NC]
+  RewriteRule ^heavy\-duty\.html$ /heavy-duty-chamber-cover-in-pune.html [R=301,L,NC]
+  RewriteRule ^high\-strength\.html$ /high-strength-paver-blocks-in-pune.html [R=301,L,NC]
+  RewriteRule ^low\-duty\.html$ /low-duty-chamber-cover-in-pune.html [R=301,L,NC]
+  RewriteRule ^manhole_cover\.html$ /rcc-manhole-cover-and-frame-in-pune.html [R=301,L,NC]
+  RewriteRule ^matte\-finish\.html$ /matte-finish-paver-blocks-in-pune.html [R=301,L,NC]
+  RewriteRule ^medium\-duty\.html$ /medium-duty-chamber-cover-in-pune.html [R=301,L,NC]
+  RewriteRule ^Paver_block\.html$ /paver-blocks-in-pune.html [R=301,L,NC]
+  RewriteRule ^product\.html$ /precast-concrete-products-in-pune.html [R=301,L,NC]
+  RewriteRule ^Rcc_Tree_Gaurd\.html$ /rcc-tree-guard-in-pune.html [R=301,L,NC]
+  RewriteRule ^rough\-finish\.html$ /rough-finish-paver-blocks-in-pune.html [R=301,L,NC]
+  RewriteRule ^rubber\-mould\.html$ /rubber-mould-paver-blocks-in-pune.html [R=301,L,NC]
+  RewriteRule ^Saucer_Drain\.html$ /precast-saucer-drain-in-pune.html [R=301,L,NC]
+  RewriteRule ^short\-blast\.html$ /short-blast-paver-blocks-in-pune.html [R=301,L,NC]
+  RewriteRule ^tree\-grating\.html$ /concrete-tree-gratings-and-guards-in-pune.html [R=301,L,NC]
+  RewriteRule ^U_Dtrain\.html$ /precast-u-drain-in-pune.html [R=301,L,NC]
+  RewriteRule ^u\-drains\-manufacturer\-in\-supplier\-pune\.html$ /u-drains-manufacturer-supplier-in-pune.html [R=301,L,NC]
 </IfModule>
