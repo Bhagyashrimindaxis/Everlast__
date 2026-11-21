@@ -76,11 +76,9 @@
   color: var(--topbar-accent-hover);
 }
 
-/* --- Right Side: Follow Us & Social Icons --- */
+/* --- Right Side: Follow Us & Social Icons (Removed) --- */
 .topbar-right {
-  display: flex;
-  align-items: center;
-  gap: 12px;
+  display: none !important;
 }
 
 .topbar-follow {
@@ -131,24 +129,24 @@
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12) !important;
 }
 
-.nav-links > li > a {
+.nav-links>li>a {
   color: #111827 !important;
   font-weight: 600 !important;
   transition: color 0.25s ease !important;
 }
 
-.nav-links > li > a:hover,
-.nav-links > li > a:focus {
+.nav-links>li>a:hover,
+.nav-links>li>a:focus {
   color: #8b1a18 !important;
 }
 
-.nav-links > li > a .dropdown-arrow,
+.nav-links>li>a .dropdown-arrow,
 .dropdown-arrow {
   color: #6b7280 !important;
   transition: color 0.25s ease, transform 0.25s ease !important;
 }
 
-.nav-links > li:hover > a .dropdown-arrow {
+.nav-links>li:hover>a .dropdown-arrow {
   color: #8b1a18 !important;
 }
 
@@ -284,7 +282,7 @@ body {
 }
 
 section:last-of-type,
-main > *:last-child,
+main>*:last-child,
 .wrapper.bg:last-of-type {
   margin-bottom: 0 !important;
 }

@@ -123,9 +123,7 @@ main > *:last-child,
 }
 
 .footer-follow-wrap {
-  display: flex;
-  align-items: center;
-  gap: 12px;
+  display: none !important;
 }
 
 .footer-follow-label {

@@ -128,17 +128,17 @@
 
 .detail-lead-heading,
 .detail-intro-column h2 {
-  display: inline;
-  font-size: 15px;
-  font-weight: 400;
-  color: #4b5563;
-  line-height: 1.75;
-  margin: 0;
+  display: inline !important;
+  font-size: 15px !important;
+  font-weight: 400 !important;
+  color: #4b5563 !important;
+  line-height: 1.75 !important;
+  margin: 0 !important;
 }
 
 .detail-intro-column h2+p {
-  display: inline;
-  margin: 0;
+  display: inline !important;
+  margin: 0 !important;
 }
 
 .detail-intro-column p {
