@@ -24,6 +24,104 @@
   <link rel="stylesheet" href="assets/css/responsive.css" />
   <link rel="stylesheet" href="assets/css/footer.css" />
   <link rel="stylesheet" href="assets/css/quote-modal.css" />
+
+  <!-- Schema Markup -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Product",
+  "name": "Rough Finish Collection",
+  "image": "https://everlastpune.com/assets/img/logo.webp",
+  "description": "Rough Finish Collection - Durable concrete products with a textured surface, designed for strong grip and practical outdoor flooring applications.",
+  "brand": {
+    "@type": "Brand",
+    "name": "Everlast"
+  },
+  "offers": {
+    "@type": "Offer",
+    "url": "https://everlastpune.com",
+    "priceCurrency": "INR",
+    "price": "0",
+    "availability": "https://schema.org/InStock"
+  }
+}
+  </script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://everlastpune.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Our Products",
+      "item": "https://everlastpune.com/precast-concrete-products-in-pune.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Rough Finish Collection",
+      "item": "https://everlastpune.com/rough-finish-paver-blocks-in-pune.html"
+    }
+  ]
+}
+  </script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What are Rough Finish Paver Blocks used for?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Rough Finish Paver Blocks are used for public ramps, commercial driveways, parking lots, fuel stations, and heavy pedestrian walkways."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What material is used to manufacture Everlast Rough Finish Paver Blocks?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "They are manufactured using a heavy-duty, high-grade cement concrete matrix."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What sizes and thicknesses are available in Rough Finish Paver Blocks?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The standard dimensions are 200 × 200 mm, with thickness options of 60 mm and 80 mm. Custom sizes are also available."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What colours and shapes are available in Rough Finish Paver Blocks?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "They are available in grey, terracotta red, yellow, and charcoal black. Shape options include square, rectangular, and interlocking profiles."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are Rough Finish Paver Blocks suitable for slippery outdoor areas?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, their rough, skid-resistant surface provides better grip, making them suitable for outdoor areas such as public ramps and commercial driveways."
+      }
+    }
+  ]
+}
+  </script>
 </head>
 <body>
 
@@ -214,19 +312,18 @@
   <section class="location-serve-section">
     <div class="location-serve-container">
       <!-- Toggle Bar -->
-      <button type="button" class="location-toggle-bar" id="locationToggleBtn" aria-expanded="true" aria-controls="locationPanel">
+      <button type="button" class="location-toggle-bar" id="locationToggleBtn" aria-expanded="false" aria-controls="locationPanel">
         <div class="location-bar-title">
           <i class="fa-solid fa-location-dot"></i>
           <span>LOCATION WE SERVE</span>
         </div>
         <div class="location-bar-toggle-text">
-          <span id="locationToggleLabel">CLICK TO CLOSE</span>
-          <i class="fa-solid fa-chevron-up" id="locationToggleIcon"></i>
+          <i class="fa-solid fa-chevron-down" id="locationToggleIcon"></i>
         </div>
       </button>
 
       <!-- Collapsible Card Panel -->
-      <div class="location-panel" id="locationPanel">
+      <div class="location-panel collapsed" id="locationPanel">
         <div class="location-card">
           <div class="location-city-heading">
             <i class="fa-solid fa-location-dot"></i>

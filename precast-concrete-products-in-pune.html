@@ -24,6 +24,47 @@
   <link rel="stylesheet" href="assets/css/responsive.css" />
   <link rel="stylesheet" href="assets/css/footer.css" />
   <link rel="stylesheet" href="assets/css/quote-modal.css" />
+
+  <!-- Schema Markup -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Our Products & Categories",
+  "url": "https://everlastpune.com/precast-concrete-products-in-pune.html",
+  "description": "Explore Everlast's range of precast concrete products in Pune, including durable solutions for drainage, roads, landscaping, and infrastructure projects.",
+  "image": "https://everlastpune.com/assets/img/logo.webp",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Everlast",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://everlastpune.com/assets/img/logo.webp"
+    }
+  }
+}
+  </script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://everlastpune.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Our Products & Categories",
+      "item": "https://everlastpune.com/precast-concrete-products-in-pune.html"
+    }
+  ]
+}
+  </script>
 </head>
 <body>
 
@@ -113,10 +154,10 @@
   <!-- JavaScript -->
 
   <!-- HERO SECTION -->
-  <section class="hero">
-    <div class="hero-overlay" id="heroOverlay">
+  <section class="banner hero">
+    <div class="banner-content hero-overlay" id="heroOverlay">
       <h1 id="heroTitle">Precast Concrete Products</h1>
-      <p id="heroDesc">Experience premium quality with our top-selling paver blocks and chamber covers.</p>
+      <p id="heroDesc" class="typewriter">Experience premium quality with our top-selling paver blocks and chamber covers.</p>
     </div>
   </section>
 
@@ -180,11 +221,6 @@
         <a href="chequered-tiles-in-pune.html"><button>View Details</button></a>
       </div>
 
-      <div class="related-card">
-        <img src="assets/img/Concrete Manhole Cover.webp" alt="Concrete Manhole Cover" title="Concrete Manhole Cover">
-        <h4>Concrete Manhole Cover</h4>
-        <a href="rcc-manhole-cover-and-frame-in-pune.html"><button>View Details</button></a>
-      </div>
 
       <div class="related-card">
         <img src="assets/img/Cement Paver Block.webp" alt="Cement Paver Block" title="Cement Paver Block">
@@ -225,19 +261,18 @@
   <section class="location-serve-section">
     <div class="location-serve-container">
       <!-- Toggle Bar -->
-      <button type="button" class="location-toggle-bar" id="locationToggleBtn" aria-expanded="true" aria-controls="locationPanel">
+      <button type="button" class="location-toggle-bar" id="locationToggleBtn" aria-expanded="false" aria-controls="locationPanel">
         <div class="location-bar-title">
           <i class="fa-solid fa-location-dot"></i>
           <span>LOCATION WE SERVE</span>
         </div>
         <div class="location-bar-toggle-text">
-          <span id="locationToggleLabel">CLICK TO CLOSE</span>
-          <i class="fa-solid fa-chevron-up" id="locationToggleIcon"></i>
+          <i class="fa-solid fa-chevron-down" id="locationToggleIcon"></i>
         </div>
       </button>
 
       <!-- Collapsible Card Panel -->
-      <div class="location-panel" id="locationPanel">
+      <div class="location-panel collapsed" id="locationPanel">
         <div class="location-card">
           <div class="location-city-heading">
             <i class="fa-solid fa-location-dot"></i>
@@ -348,28 +383,6 @@
     </div>
   </section>
 
-  <script>
-    // Location We Serve Accordion Toggle
-    const locToggleBtn = document.getElementById('locationToggleBtn');
-    const locPanel = document.getElementById('locationPanel');
-    const locToggleLabel = document.getElementById('locationToggleLabel');
-    const locToggleIcon = document.getElementById('locationToggleIcon');
-
-    if (locToggleBtn && locPanel) {
-      locToggleBtn.addEventListener('click', () => {
-        const isCollapsed = locPanel.classList.toggle('collapsed');
-        locToggleBtn.setAttribute('aria-expanded', !isCollapsed);
-        if (isCollapsed) {
-          locToggleLabel.textContent = 'CLICK TO EXPAND';
-          locToggleIcon.className = 'fa-solid fa-chevron-down';
-        } else {
-          locToggleLabel.textContent = 'CLICK TO CLOSE';
-          locToggleIcon.className = 'fa-solid fa-chevron-up';
-        }
-      });
-    }
-  </script>
-
 <!-- Footer Section -->
 <footer class="site-footer">
   <div class="footer-pattern"></div>
@@ -456,8 +469,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js"></script>
 
 <!-- Footer Section -->
-  <script src="assets/js/breadcrumbs.js"></script>
-  <script src="assets/js/quote-modal.js"></script>
 
   <!-- Navbar Toggle Script -->
   <script>

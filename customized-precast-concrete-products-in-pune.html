@@ -24,6 +24,104 @@
   <link rel="stylesheet" href="assets/css/responsive.css" />
   <link rel="stylesheet" href="assets/css/footer.css" />
   <link rel="stylesheet" href="assets/css/quote-modal.css" />
+
+  <!-- Schema Markup -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Product",
+  "name": "Customized Precast Collection",
+  "image": "https://everlastpune.com/assets/img/logo.webp",
+  "description": "Customized Precast Concrete Products - Durable, tailor-made concrete solutions designed to meet specific construction and infrastructure requirements.",
+  "brand": {
+    "@type": "Brand",
+    "name": "Everlast"
+  },
+  "offers": {
+    "@type": "Offer",
+    "url": "https://everlastpune.com",
+    "priceCurrency": "INR",
+    "price": "0",
+    "availability": "https://schema.org/InStock"
+  }
+}
+  </script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://everlastpune.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Our Products",
+      "item": "https://everlastpune.com/precast-concrete-products-in-pune.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Customized Precast Collection",
+      "item": "https://everlastpune.com/customized-precast-concrete-products-in-pune.html"
+    }
+  ]
+}
+  </script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What are Customized Precast Concrete Products?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Customized Precast Concrete Products are specially designed concrete structures manufactured according to specific project requirements. They are used for infrastructure, utility identification, boundary marking, and civil engineering applications."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which customized precast concrete products does Everlast offer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Everlast offers Custom Precast OFC Route Markers and Precast Boundary & Milestone Pillars. These products are designed for specialized infrastructure and demarcation requirements."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What materials are used to manufacture Everlast Customized Precast Products?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The OFC Route Markers are manufactured using high-strength precast concrete, while the Boundary and Milestone Pillars use reinforced structural precast concrete in M30/M40 grades."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can Customized Precast Concrete Products be made according to project requirements?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, Everlast designs and manufactures customized precast solutions according to structural specifications, including engraved lettering, product shapes, and specialized identification requirements."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where are Customized Precast Concrete Products used?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "These products are suitable for telecom cable routes, military cable networks, underground pipeline marking, land boundaries, highway milestone marking, government plot demarcation, and railway property boundaries."
+      }
+    }
+  ]
+}
+  </script>
 </head>
 <body>
 
@@ -169,19 +267,18 @@
   <section class="location-serve-section">
     <div class="location-serve-container">
       <!-- Toggle Bar -->
-      <button type="button" class="location-toggle-bar" id="locationToggleBtn" aria-expanded="true" aria-controls="locationPanel">
+      <button type="button" class="location-toggle-bar" id="locationToggleBtn" aria-expanded="false" aria-controls="locationPanel">
         <div class="location-bar-title">
           <i class="fa-solid fa-location-dot"></i>
           <span>LOCATION WE SERVE</span>
         </div>
         <div class="location-bar-toggle-text">
-          <span id="locationToggleLabel">CLICK TO CLOSE</span>
-          <i class="fa-solid fa-chevron-up" id="locationToggleIcon"></i>
+          <i class="fa-solid fa-chevron-down" id="locationToggleIcon"></i>
         </div>
       </button>
 
       <!-- Collapsible Card Panel -->
-      <div class="location-panel" id="locationPanel">
+      <div class="location-panel collapsed" id="locationPanel">
         <div class="location-card">
           <div class="location-city-heading">
             <i class="fa-solid fa-location-dot"></i>

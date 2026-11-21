@@ -24,6 +24,104 @@
   <link rel="stylesheet" href="assets/css/responsive.css" />
   <link rel="stylesheet" href="assets/css/footer.css" />
   <link rel="stylesheet" href="assets/css/quote-modal.css" />
+
+  <!-- Schema Markup -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Product",
+  "name": "Tree Grating / Guard Collection",
+  "image": "https://everlastpune.com/assets/img/logo.webp",
+  "description": "Concrete Tree Gratings and Guards - Durable concrete products designed to protect trees and provide a neat, functional finish around tree bases.",
+  "brand": {
+    "@type": "Brand",
+    "name": "Everlast"
+  },
+  "offers": {
+    "@type": "Offer",
+    "url": "https://everlastpune.com",
+    "priceCurrency": "INR",
+    "price": "0",
+    "availability": "https://schema.org/InStock"
+  }
+}
+  </script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://everlastpune.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Our Products",
+      "item": "https://everlastpune.com/precast-concrete-products-in-pune.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Tree Grating / Guard Collection",
+      "item": "https://everlastpune.com/concrete-tree-gratings-and-guards-in-pune.html"
+    }
+  ]
+}
+  </script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What are Concrete Tree Gratings and Guards used for?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "They are used to protect tree root zones while providing a safe walking surface in urban sidewalks, public parks, and city avenues."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What material is used to manufacture Everlast Tree Gratings?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "They are manufactured using heavy-duty reinforced precast concrete."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What thickness is available for Concrete Tree Gratings?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Everlast Tree Gratings are available in an 80 mm thickness."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What colours and designs are available in Tree Gratings?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "They are available in concrete grey and charcoal black, with a square outer frame and circular trunk cutout."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What inner diameter options are available for Tree Gratings?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "They are available with standard inner diameters of 450 mm and 600 mm to accommodate different tree trunk sizes."
+      }
+    }
+  ]
+}
+  </script>
 </head>
 <body>
 
@@ -164,19 +262,18 @@
   <section class="location-serve-section">
     <div class="location-serve-container">
       <!-- Toggle Bar -->
-      <button type="button" class="location-toggle-bar" id="locationToggleBtn" aria-expanded="true" aria-controls="locationPanel">
+      <button type="button" class="location-toggle-bar" id="locationToggleBtn" aria-expanded="false" aria-controls="locationPanel">
         <div class="location-bar-title">
           <i class="fa-solid fa-location-dot"></i>
           <span>LOCATION WE SERVE</span>
         </div>
         <div class="location-bar-toggle-text">
-          <span id="locationToggleLabel">CLICK TO CLOSE</span>
-          <i class="fa-solid fa-chevron-up" id="locationToggleIcon"></i>
+          <i class="fa-solid fa-chevron-down" id="locationToggleIcon"></i>
         </div>
       </button>
 
       <!-- Collapsible Card Panel -->
-      <div class="location-panel" id="locationPanel">
+      <div class="location-panel collapsed" id="locationPanel">
         <div class="location-card">
           <div class="location-city-heading">
             <i class="fa-solid fa-location-dot"></i>

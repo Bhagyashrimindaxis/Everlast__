@@ -24,6 +24,104 @@
   <link rel="stylesheet" href="assets/css/responsive.css" />
   <link rel="stylesheet" href="assets/css/footer.css" />
   <link rel="stylesheet" href="assets/css/quote-modal.css" />
+
+  <!-- Schema Markup -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Product",
+  "name": "Matte Finish Collection",
+  "image": "https://everlastpune.com/assets/img/logo.webp",
+  "description": "Matte Finish Paver Blocks - Durable concrete blocks with a smooth matte finish, designed for attractive and long-lasting outdoor flooring.",
+  "brand": {
+    "@type": "Brand",
+    "name": "Everlast"
+  },
+  "offers": {
+    "@type": "Offer",
+    "url": "https://everlastpune.com",
+    "priceCurrency": "INR",
+    "price": "0",
+    "availability": "https://schema.org/InStock"
+  }
+}
+  </script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://everlastpune.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Our Products",
+      "item": "https://everlastpune.com/precast-concrete-products-in-pune.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Matte Finish Collection",
+      "item": "https://everlastpune.com/matte-finish-paver-blocks-in-pune.html"
+    }
+  ]
+}
+  </script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What are Matte Finish Paver Blocks used for?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Matte Finish Paver Blocks are used for outdoor flooring in residential and commercial spaces, including walkways, parking areas, driveways, and heavy-traffic pavements."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What material is used to manufacture Everlast Matte Finish Paver Blocks?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Everlast Matte Finish Paver Blocks are manufactured using premium concrete and high-strength vibro-pressed concrete, depending on the design."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What sizes and thicknesses are available in Matte Finish Paver Blocks?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "These pavers are available in 60 mm and 80 mm thicknesses. The Matte Finish Square Paver has dimensions of 200 × 200 × 60 mm, while the Zigzag Paver has standard dimensions of 222 × 111 mm."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What shapes and colours are available in Matte Finish Pavers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Everlast offers square, I-shaped, and zigzag interlocking pavers. Available colours include classic grey, charcoal grey, red, and yellow, with custom colours available for selected designs."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are Matte Finish Paver Blocks suitable for heavy-traffic areas?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, selected matte finish pavers are designed for heavy-traffic pavements. The zigzag interlocking design also features an anti-skid matte finish, making it suitable for outdoor applications."
+      }
+    }
+  ]
+}
+  </script>
 </head>
 <body>
 
@@ -190,19 +288,18 @@
   <section class="location-serve-section">
     <div class="location-serve-container">
       <!-- Toggle Bar -->
-      <button type="button" class="location-toggle-bar" id="locationToggleBtn" aria-expanded="true" aria-controls="locationPanel">
+      <button type="button" class="location-toggle-bar" id="locationToggleBtn" aria-expanded="false" aria-controls="locationPanel">
         <div class="location-bar-title">
           <i class="fa-solid fa-location-dot"></i>
           <span>LOCATION WE SERVE</span>
         </div>
         <div class="location-bar-toggle-text">
-          <span id="locationToggleLabel">CLICK TO CLOSE</span>
-          <i class="fa-solid fa-chevron-up" id="locationToggleIcon"></i>
+          <i class="fa-solid fa-chevron-down" id="locationToggleIcon"></i>
         </div>
       </button>
 
       <!-- Collapsible Card Panel -->
-      <div class="location-panel" id="locationPanel">
+      <div class="location-panel collapsed" id="locationPanel">
         <div class="location-card">
           <div class="location-city-heading">
             <i class="fa-solid fa-location-dot"></i>

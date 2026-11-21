@@ -24,6 +24,44 @@
   <link rel="stylesheet" href="assets/css/responsive.css" />
   <link rel="stylesheet" href="assets/css/footer.css" />
   <link rel="stylesheet" href="assets/css/quote-modal.css" />
+
+  <!-- Schema Markup -->
+  <script type="application/ld+json">
+{
+  "@context" : "https://schema.org",
+  "@type" : "AboutPage",
+  "name" : "About Us",
+  "url" : "https://everlastpune.com/about-us.html",
+  "description" : "Learn about Everlast, a manufacturer and supplier of precast concrete products offering durable and reliable solutions for infrastructure, construction, and landscaping projects.",
+  "image" : "https://everlastpune.com/assets/img/logo.webp",
+  "publisher" : {
+    "@type" : "Organization",
+    "name" : "Everlast",
+    "logo" : {
+      "@type" : "ImageObject",
+      "url" : "https://everlastpune.com/assets/img/logo.webp"
+    }
+  }
+}
+  </script>
+
+  <script type="application/ld+json">
+{
+  "@context" : "https://schema.org",
+  "@type" : "BreadcrumbList",
+  "itemListElement" : [{
+    "@type" : "ListItem",
+    "position" : 1,
+    "name" : "Home",
+    "item" : "https://everlastpune.com/"
+  },{
+    "@type" : "ListItem",
+    "position" : 2,
+    "name" : "About Us",
+    "item" : "https://everlastpune.com/about-us.html"
+  }]
+}
+  </script>
 </head>
 <body>
 
@@ -115,24 +153,10 @@
   <!-- Hero Section -->
 
 <!-- Banner Section -->
-<section class="banner" style="
-  background: url('assets/img/CONTACT.webp') center/cover no-repeat;
-  min-height: 50vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: white;
-  position: relative;
-  padding: 120px 20px 60px;
-">
-  <div class="banner-content" style="
-    background-color: rgba(0, 0, 0, 0.5); 
-    padding: 20px 40px;
-    border-radius: 10px;
-  ">
+<section class="banner hero">
+  <div class="banner-content hero-overlay">
     <h1>About Us</h1>
-    <p>Delivering trust, strength, and quality for over 15 years in infrastructure solutions.</p>
+    <p class="typewriter">Delivering trust, strength, and quality for over 15 years in infrastructure solutions.</p>
   </div>
 </section>
 
@@ -339,8 +363,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js"></script>
 
 <!-- Footer Section -->
-  <script src="assets/js/breadcrumbs.js"></script>
-  <script src="assets/js/quote-modal.js"></script>
 
   <!-- Navbar Toggle Script -->
   <script>

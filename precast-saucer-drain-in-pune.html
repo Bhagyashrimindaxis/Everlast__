@@ -24,6 +24,104 @@
   <link rel="stylesheet" href="assets/css/responsive.css" />
   <link rel="stylesheet" href="assets/css/footer.css" />
   <link rel="stylesheet" href="assets/css/quote-modal.css" />
+
+  <!-- Schema Markup -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Product",
+  "name": "Saucer Drain",
+  "image": "https://everlastpune.com/assets/img/logo.webp",
+  "description": "Precast Saucer Drain - Durable concrete drainage solution designed for efficient rainwater collection and smooth water flow in outdoor areas.",
+  "brand": {
+    "@type": "Brand",
+    "name": "Everlast"
+  },
+  "offers": {
+    "@type": "Offer",
+    "url": "https://everlastpune.com",
+    "priceCurrency": "INR",
+    "price": "0",
+    "availability": "https://schema.org/InStock"
+  }
+}
+  </script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://everlastpune.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Our Products",
+      "item": "https://everlastpune.com/precast-concrete-products-in-pune.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Saucer Drain",
+      "item": "https://everlastpune.com/precast-saucer-drain-in-pune.html"
+    }
+  ]
+}
+  </script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What are Precast Saucer Drains used for?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Precast Saucer Drains are used for water drainage along roadsides, walkways, parking lots, and industrial compounds."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What material is used to manufacture Everlast Saucer Drains?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "They are manufactured using Reinforced Cement Concrete (RCC)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the dimensions of Everlast Precast Saucer Drains?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The standard dimensions are 600 × 300 × 75 mm (length × width × height)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What concrete grades are available for Saucer Drains?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "They are available in M25 and M30 grade concrete."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the main features of Precast Saucer Drains?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "They feature a shallow curved profile for smooth water redirection, an open channel layout to help prevent clogging, and a precast design for easy installation."
+      }
+    }
+  ]
+}
+  </script>
 </head>
 <body>
 
@@ -154,19 +252,18 @@
   <section class="location-serve-section">
     <div class="location-serve-container">
       <!-- Toggle Bar -->
-      <button type="button" class="location-toggle-bar" id="locationToggleBtn" aria-expanded="true" aria-controls="locationPanel">
+      <button type="button" class="location-toggle-bar" id="locationToggleBtn" aria-expanded="false" aria-controls="locationPanel">
         <div class="location-bar-title">
           <i class="fa-solid fa-location-dot"></i>
           <span>LOCATION WE SERVE</span>
         </div>
         <div class="location-bar-toggle-text">
-          <span id="locationToggleLabel">CLICK TO CLOSE</span>
-          <i class="fa-solid fa-chevron-up" id="locationToggleIcon"></i>
+          <i class="fa-solid fa-chevron-down" id="locationToggleIcon"></i>
         </div>
       </button>
 
       <!-- Collapsible Card Panel -->
-      <div class="location-panel" id="locationPanel">
+      <div class="location-panel collapsed" id="locationPanel">
         <div class="location-card">
           <div class="location-city-heading">
             <i class="fa-solid fa-location-dot"></i>
@@ -370,8 +467,6 @@
     this.textContent = isActive ? 'View Details' : 'Hide Details';
   });
 </script>
-  <script src="assets/js/breadcrumbs.js"></script>
-  <script src="assets/js/quote-modal.js"></script>
 
   <!-- Navbar Toggle Script -->
   <script>

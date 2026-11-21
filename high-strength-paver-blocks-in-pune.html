@@ -24,6 +24,104 @@
   <link rel="stylesheet" href="assets/css/responsive.css" />
   <link rel="stylesheet" href="assets/css/footer.css" />
   <link rel="stylesheet" href="assets/css/quote-modal.css" />
+
+  <!-- Schema Markup -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Product",
+  "name": "High Strength Pavers",
+  "image": "https://everlastpune.com/assets/img/logo.webp",
+  "description": "High Strength Paver Blocks - Durable concrete blocks designed to withstand heavy loads and provide strong, long-lasting outdoor flooring solutions.",
+  "brand": {
+    "@type": "Brand",
+    "name": "Everlast"
+  },
+  "offers": {
+    "@type": "Offer",
+    "url": "https://everlastpune.com",
+    "priceCurrency": "INR",
+    "price": "0",
+    "availability": "https://schema.org/InStock"
+  }
+}
+  </script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://everlastpune.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Our Products",
+      "item": "https://everlastpune.com/precast-concrete-products-in-pune.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "High Strength Pavers",
+      "item": "https://everlastpune.com/high-strength-paver-blocks-in-pune.html"
+    }
+  ]
+}
+  </script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What are High Strength Paver Blocks used for?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "High Strength Paver Blocks are used for heavy-duty commercial and industrial flooring applications, including petrol pumps, logistics parks, industrial loading bays, and bus terminals."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What concrete grades are used to manufacture Everlast High Strength Pavers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Everlast High Strength Pavers are manufactured using M40, M50, and M60 grade concrete mixes to withstand demanding load conditions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the thickness of Everlast High Strength Paver Blocks?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Commercial Interlocking I-Section Paver Block has a thickness of 80 mm and is manufactured using M40 grade vibro-pressed high-density concrete."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What shapes and colours are available in High Strength Paver Blocks?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The listed Commercial Interlocking Paver is available in a high-interlocking I-shape with a granite grey finish."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where can High Strength Paver Blocks be installed?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "These pavers are suitable for petrol pumps, bus terminals, logistics parks, commercial spaces, and industrial loading areas where durable flooring is required."
+      }
+    }
+  ]
+}
+  </script>
 </head>
 <body>
 
@@ -199,19 +297,18 @@
   <section class="location-serve-section">
     <div class="location-serve-container">
       <!-- Toggle Bar -->
-      <button type="button" class="location-toggle-bar" id="locationToggleBtn" aria-expanded="true" aria-controls="locationPanel">
+      <button type="button" class="location-toggle-bar" id="locationToggleBtn" aria-expanded="false" aria-controls="locationPanel">
         <div class="location-bar-title">
           <i class="fa-solid fa-location-dot"></i>
           <span>LOCATION WE SERVE</span>
         </div>
         <div class="location-bar-toggle-text">
-          <span id="locationToggleLabel">CLICK TO CLOSE</span>
-          <i class="fa-solid fa-chevron-up" id="locationToggleIcon"></i>
+          <i class="fa-solid fa-chevron-down" id="locationToggleIcon"></i>
         </div>
       </button>
 
       <!-- Collapsible Card Panel -->
-      <div class="location-panel" id="locationPanel">
+      <div class="location-panel collapsed" id="locationPanel">
         <div class="location-card">
           <div class="location-city-heading">
             <i class="fa-solid fa-location-dot"></i>

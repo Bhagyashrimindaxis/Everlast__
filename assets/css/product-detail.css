@@ -120,20 +120,25 @@
   transform: translateY(-1px);
 }
 
-/* Top Intro Text (Vertically Centered with Image) */
+/* Top Intro Text (Vertically Centered with Image via Grid) */
 .detail-intro-column {
   color: var(--text-dark);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  display: block;
 }
 
-.detail-lead-heading {
-  font-size: 22px;
-  font-weight: 700;
-  color: var(--dark-charcoal);
-  margin-bottom: 12px;
-  line-height: 1.35;
+.detail-lead-heading,
+.detail-intro-column h2 {
+  display: inline;
+  font-size: 15px;
+  font-weight: 400;
+  color: #4b5563;
+  line-height: 1.75;
+  margin: 0;
+}
+
+.detail-intro-column h2+p {
+  display: inline;
+  margin: 0;
 }
 
 .detail-intro-column p {
@@ -141,6 +146,11 @@
   line-height: 1.75;
   color: #4b5563;
   margin-bottom: 14px;
+}
+
+.detail-intro-column h2+p+p {
+  display: block;
+  margin-top: 14px;
 }
 
 /* Section Header Bars (Spans Full Width of Container) */

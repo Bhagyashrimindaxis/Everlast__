@@ -26,6 +26,100 @@
   <link rel="stylesheet" href="assets/css/responsive.css" />
   <link rel="stylesheet" href="assets/css/footer.css" />
   <link rel="stylesheet" href="assets/css/quote-modal.css" />
+
+  <!-- Schema Markup -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org/", 
+  "@type": "Product", 
+  "name": "Concrete Kerb Stone",
+  "image": "https://everlastpune.com/assets/img/logo.webp",
+  "description": "Concrete Kerb Stone - Durable concrete edging solutions designed for road boundaries, footpaths, and landscaping applications.",
+  "brand": {
+    "@type": "Brand",
+    "name": "Everlast"
+  },
+  "offers": {
+    "@type": "Offer",
+    "url": "https://everlastpune.com",
+    "priceCurrency": "INR",
+    "price": "0",
+    "availability": "https://schema.org/InStock"
+  }
+}
+  </script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org/", 
+  "@type": "BreadcrumbList", 
+  "itemListElement": [{
+    "@type": "ListItem", 
+    "position": 1, 
+    "name": "Home",
+    "item": "https://everlastpune.com"  
+  },{
+    "@type": "ListItem", 
+    "position": 2, 
+    "name": "Our Products",
+    "item": "https://everlastpune.com/precast-concrete-products-in-pune.html"  
+  },{
+    "@type": "ListItem", 
+    "position": 3, 
+    "name": "Concrete Kerb Stone",
+    "item": "https://everlastpune.com/concrete-kerbstone-in-pune.html"  
+  }]
+}
+  </script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a Concrete Kerbstone used for?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Concrete Kerbstones are used to create boundaries between roads, footpaths, gardens, parking areas, and landscaped spaces. They help maintain proper alignment and prevent soil or pavement displacement."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What material is used to manufacture Everlast Concrete Kerbstones?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Everlast Concrete Kerbstones are manufactured using precast concrete. Selected heavy-duty models are made with M30/M40 grade concrete for improved strength and load resistance."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What sizes and designs are available in Concrete Kerbstones?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Everlast offers different sizes and designs, including L-shaped kerbstones, curved kerbstones, and rectangular or square kerbstone blocks. Available dimensions include 300 × 300 mm, 450 × 300 mm, 600 × 300 mm, and 1000 × 350 mm."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the main features of Everlast Concrete Kerbstones?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Key features include high impact resistance, durable concrete construction, accurate alignment, interlocking installation options, and integrated gutter channels in selected L-shaped designs."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where can Concrete Kerbstones be installed?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Concrete Kerbstones are suitable for city roads, highways, industrial areas, parking lots, garden pathways, residential walkways, commercial complexes, and public parks."
+      }
+    }
+  ]
+}
+  </script>
 </head>
 <body>
 
@@ -528,19 +622,18 @@
   <section class="location-serve-section">
     <div class="location-serve-container">
       <!-- Toggle Bar -->
-      <button type="button" class="location-toggle-bar" id="locationToggleBtn" aria-expanded="true" aria-controls="locationPanel">
+      <button type="button" class="location-toggle-bar" id="locationToggleBtn" aria-expanded="false" aria-controls="locationPanel">
         <div class="location-bar-title">
           <i class="fa-solid fa-location-dot"></i>
           <span>LOCATION WE SERVE</span>
         </div>
         <div class="location-bar-toggle-text">
-          <span id="locationToggleLabel">CLICK TO CLOSE</span>
-          <i class="fa-solid fa-chevron-up" id="locationToggleIcon"></i>
+          <i class="fa-solid fa-chevron-down" id="locationToggleIcon"></i>
         </div>
       </button>
 
       <!-- Collapsible Card Panel -->
-      <div class="location-panel" id="locationPanel">
+      <div class="location-panel collapsed" id="locationPanel">
         <div class="location-card">
           <div class="location-city-heading">
             <i class="fa-solid fa-location-dot"></i>

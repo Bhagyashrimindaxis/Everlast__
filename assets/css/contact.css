@@ -212,62 +212,158 @@
 body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f8f8f8;
+      background-color: #ffffff;
       color: #333;
     }
 
+    .hero,
     .banner {
-      position: relative;
-      height: 320px;
-      background: url('../img/C_A_01.webp') center/cover no-repeat;
+      background: url('../img/hero-banner-main.webp') center/cover no-repeat;
+      height: 55vh;
+      min-height: 420px;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
+      position: relative;
+      overflow: hidden;
       text-align: center;
-      color: white;
+      padding: 130px 20px 60px;
+      box-sizing: border-box;
     }
 
-    .banner::before {
-      content: '';
+    .hero::after,
+    .banner::after {
+      content: "";
       position: absolute;
       inset: 0;
-      background: rgba(0, 0, 0, 0.6);
+      background: rgba(0, 0, 0, 0.28);
       z-index: 1;
     }
 
-    .banner-content {
-      position: relative;
-      z-index: 2;
-      max-width: 90%;
+    .hero::before,
+    .banner::before {
+      content: none !important;
+      display: none !important;
     }
 
-    .banner h1 {
-      font-size: 2.8rem;
-      margin-bottom: 10px;
+    .banner-content,
+    .hero-overlay {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      color: #fff;
+      background: rgba(0, 0, 0, 0.16);
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 14px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+      padding: 26px 44px;
+      max-width: 860px;
+      width: 90%;
+      margin: 0 auto;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .banner-content h1,
+    .hero-overlay h1,
+    .banner h1,
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin: 0 0 12px;
+      letter-spacing: 0.5px;
+      text-align: center;
+      color: #ffffff;
       animation: slideFade 1s ease-out forwards;
+      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.95), 0 4px 25px rgba(0, 0, 0, 0.7);
+    }
+
+    .typewriter,
+    .banner-content p,
+    .hero-overlay p {
+      font-size: 1.2rem;
+      max-width: 780px;
+      margin: 0 auto;
+      text-align: center;
+      color: #ffffff;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.95), 0 3px 15px rgba(0, 0, 0, 0.65);
+      box-sizing: border-box;
     }
 
     .typewriter {
-      font-size: 1.2rem;
+      display: inline-block;
       overflow: hidden;
       white-space: nowrap;
-      border-right: 3px solid white;
+      border-right: 3px solid #ffffff;
       width: 0;
-      animation: typing 4s steps(50, end) forwards, blink 0.7s step-end infinite;
+      max-width: 100%;
+      animation: typing 3.5s steps(60, end) 0.2s forwards, blink 0.75s step-end infinite;
     }
 
     @keyframes slideFade {
-      from { transform: translateY(-40px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
+      from {
+        transform: translateY(-25px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
     }
 
     @keyframes typing {
-      from { width: 0; }
-      to { width: 100%; }
+      from {
+        width: 0;
+      }
+      to {
+        width: 100%;
+      }
     }
 
     @keyframes blink {
-      50% { border-color: transparent; }
+      50% {
+        border-color: transparent;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero,
+      .banner {
+        height: auto;
+        min-height: 360px;
+        padding: 110px 16px 40px;
+      }
+      .banner-content,
+      .hero-overlay {
+        padding: 20px 20px;
+        width: 95%;
+      }
+      .banner-content h1,
+      .hero-overlay h1,
+      .banner h1,
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .typewriter,
+      .banner-content p,
+      .hero-overlay p {
+        font-size: 1rem;
+        white-space: normal;
+        border-right: none;
+        animation: fadeIn 0.8s ease-out forwards;
+        width: auto;
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
     .contact-section {
@@ -277,7 +373,7 @@ body {
       align-items: flex-start;
       padding: 60px 20px;
       flex-wrap: wrap;
-    background: linear-gradient(135deg,#fbe8d3,#f5e0c3);
+      background: #ffffff;
     }
 
     .contact-info,

@@ -26,6 +26,104 @@
   <link rel="stylesheet" href="assets/css/responsive.css" />
   <link rel="stylesheet" href="assets/css/footer.css" />
   <link rel="stylesheet" href="assets/css/quote-modal.css" />
+
+  <!-- Schema Markup -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Product",
+  "name": "Paver Block Collection",
+  "image": "https://everlastpune.com/assets/img/logo.webp",
+  "description": "Paver Blocks - Durable concrete blocks designed for strong, attractive, and long-lasting flooring in driveways, pathways, parking areas, and outdoor spaces.",
+  "brand": {
+    "@type": "Brand",
+    "name": "Everlast"
+  },
+  "offers": {
+    "@type": "Offer",
+    "url": "https://everlastpune.com",
+    "priceCurrency": "INR",
+    "price": "0",
+    "availability": "https://schema.org/InStock"
+  }
+}
+  </script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://everlastpune.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Our Products",
+      "item": "https://everlastpune.com/precast-concrete-products-in-pune.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Paver Block Collection",
+      "item": "https://everlastpune.com/paver-blocks-in-pune.html"
+    }
+  ]
+}
+  </script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What are Paver Blocks used for?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Paver Blocks are used for outdoor flooring in commercial driveways, public plazas, parking lots, pavements, and building outer areas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What materials are used to manufacture Everlast Paver Blocks?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Everlast Paver Blocks are available in materials such as heavy-duty precast concrete and concrete, depending on the product type."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What sizes and thicknesses are available in Paver Blocks?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The collection includes 12 × 12 inch (300 × 300 mm) blocks with 60 mm thickness. Other options include 55 mm and 80 mm thicknesses."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What shapes and colours are available in Paver Blocks?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Paver Blocks are available in square, zigzag, rectangular, and interlocking shapes. Colour options include red, yellow, grey, black, and multicolour."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are Everlast Paver Blocks suitable for outdoor applications?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, the range includes outdoor paver blocks designed for applications such as driveways, parking areas, public plazas, and pavements."
+      }
+    }
+  ]
+}
+  </script>
 </head>
 <body>
 
@@ -427,19 +525,18 @@
   <section class="location-serve-section">
     <div class="location-serve-container">
       <!-- Toggle Bar -->
-      <button type="button" class="location-toggle-bar" id="locationToggleBtn" aria-expanded="true" aria-controls="locationPanel">
+      <button type="button" class="location-toggle-bar" id="locationToggleBtn" aria-expanded="false" aria-controls="locationPanel">
         <div class="location-bar-title">
           <i class="fa-solid fa-location-dot"></i>
           <span>LOCATION WE SERVE</span>
         </div>
         <div class="location-bar-toggle-text">
-          <span id="locationToggleLabel">CLICK TO CLOSE</span>
-          <i class="fa-solid fa-chevron-up" id="locationToggleIcon"></i>
+          <i class="fa-solid fa-chevron-down" id="locationToggleIcon"></i>
         </div>
       </button>
 
       <!-- Collapsible Card Panel -->
-      <div class="location-panel" id="locationPanel">
+      <div class="location-panel collapsed" id="locationPanel">
         <div class="location-card">
           <div class="location-city-heading">
             <i class="fa-solid fa-location-dot"></i>

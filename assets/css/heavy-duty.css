@@ -368,7 +368,7 @@
     display: flex;
     align-items: center;
     color: #cccccc !important; /* Soft white/gray for unselected trail stages */
-    text-transform: uppercase;
+    text-transform: none;
   }
 
   /* Elegant fontawesome right angle separation dividers */

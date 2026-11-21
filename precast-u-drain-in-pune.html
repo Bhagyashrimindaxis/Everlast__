@@ -26,6 +26,104 @@
   <link rel="stylesheet" href="assets/css/responsive.css" />
   <link rel="stylesheet" href="assets/css/footer.css" />
   <link rel="stylesheet" href="assets/css/quote-modal.css" />
+
+  <!-- Schema Markup -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Product",
+  "name": "U Drain",
+  "image": "https://everlastpune.com/assets/img/logo.webp",
+  "description": "Precast U Drain - Durable concrete drainage channels designed for efficient water flow and reliable drainage in roads, construction sites, and outdoor areas.",
+  "brand": {
+    "@type": "Brand",
+    "name": "Everlast"
+  },
+  "offers": {
+    "@type": "Offer",
+    "url": "https://everlastpune.com",
+    "priceCurrency": "INR",
+    "price": "0",
+    "availability": "https://schema.org/InStock"
+  }
+}
+  </script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://everlastpune.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Our Products",
+      "item": "https://everlastpune.com/precast-concrete-products-in-pune.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "U Drain",
+      "item": "https://everlastpune.com/precast-u-drain-in-pune.html"
+    }
+  ]
+}
+  </script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What are Precast U Drains used for?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Precast U Drains are used for stormwater drainage in industrial yards, highways, residential townships, commercial infrastructure, and roadside areas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What material is used to manufacture Everlast Precast U Drains?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "They are manufactured using reinforced precast concrete, which provides structural strength and durability."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What sizes are available in Everlast Precast U Drains?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "They are available in two standard sizes: 300 × 300 × 2000 mm and 450 × 450 × 2000 mm (width × height × length)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What colour are Everlast Precast U Drains available in?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Everlast Precast U Drains are available in grey."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the main features of Precast U Drains?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "They offer high water-flow capacity, good load-bearing strength, and a uniform interlocking fit. The heavy-duty variant is also designed to resist soil shifts and crushing loads."
+      }
+    }
+  ]
+}
+  </script>
 </head>
 <body>
 
@@ -259,19 +357,18 @@
   <section class="location-serve-section">
     <div class="location-serve-container">
       <!-- Toggle Bar -->
-      <button type="button" class="location-toggle-bar" id="locationToggleBtn" aria-expanded="true" aria-controls="locationPanel">
+      <button type="button" class="location-toggle-bar" id="locationToggleBtn" aria-expanded="false" aria-controls="locationPanel">
         <div class="location-bar-title">
           <i class="fa-solid fa-location-dot"></i>
           <span>LOCATION WE SERVE</span>
         </div>
         <div class="location-bar-toggle-text">
-          <span id="locationToggleLabel">CLICK TO CLOSE</span>
-          <i class="fa-solid fa-chevron-up" id="locationToggleIcon"></i>
+          <i class="fa-solid fa-chevron-down" id="locationToggleIcon"></i>
         </div>
       </button>
 
       <!-- Collapsible Card Panel -->
-      <div class="location-panel" id="locationPanel">
+      <div class="location-panel collapsed" id="locationPanel">
         <div class="location-card">
           <div class="location-city-heading">
             <i class="fa-solid fa-location-dot"></i>

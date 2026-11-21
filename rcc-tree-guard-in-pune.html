@@ -28,6 +28,104 @@
   <link rel="stylesheet" href="assets/css/responsive.css" />
   <link rel="stylesheet" href="assets/css/footer.css" />
   <link rel="stylesheet" href="assets/css/quote-modal.css" />
+
+  <!-- Schema Markup -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Product",
+  "name": "RCC Tree Guard",
+  "image": "https://everlastpune.com/assets/img/logo.webp",
+  "description": "RCC Tree Guard - Durable reinforced concrete structure designed to protect young trees from physical damage and provide long-lasting outdoor protection.",
+  "brand": {
+    "@type": "Brand",
+    "name": "Everlast"
+  },
+  "offers": {
+    "@type": "Offer",
+    "url": "https://everlastpune.com",
+    "priceCurrency": "INR",
+    "price": "0",
+    "availability": "https://schema.org/InStock"
+  }
+}
+  </script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://everlastpune.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Our Products",
+      "item": "https://everlastpune.com/precast-concrete-products-in-pune.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "RCC Tree Guard",
+      "item": "https://everlastpune.com/rcc-tree-guard-in-pune.html"
+    }
+  ]
+}
+  </script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What are RCC Tree Guards used for?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "RCC Tree Guards are used to protect tree root zones from pedestrian traffic in urban footpaths, public parks, avenue plantations, and Smart City roads."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What material is used to manufacture Everlast RCC Tree Guards?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "They are manufactured using a Reinforced Cement Concrete (RCC) matrix."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What sizes are available for RCC Tree Guards?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "They are available in standard sizes of 600 × 600 mm and 900 × 900 mm in a two-piece interlocking design."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What thicknesses and colours are available?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The tree guards are available in 60 mm and 80 mm thicknesses, with natural concrete grey and terracotta red colour options."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do RCC Tree Guards support tree growth?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "They feature porous slots that help absorb water and provide a larger root-breathing area while protecting the root zone from pedestrian traffic."
+      }
+    }
+  ]
+}
+  </script>
 </head>
 <body>
 
@@ -217,19 +315,18 @@
   <section class="location-serve-section">
     <div class="location-serve-container">
       <!-- Toggle Bar -->
-      <button type="button" class="location-toggle-bar" id="locationToggleBtn" aria-expanded="true" aria-controls="locationPanel">
+      <button type="button" class="location-toggle-bar" id="locationToggleBtn" aria-expanded="false" aria-controls="locationPanel">
         <div class="location-bar-title">
           <i class="fa-solid fa-location-dot"></i>
           <span>LOCATION WE SERVE</span>
         </div>
         <div class="location-bar-toggle-text">
-          <span id="locationToggleLabel">CLICK TO CLOSE</span>
-          <i class="fa-solid fa-chevron-up" id="locationToggleIcon"></i>
+          <i class="fa-solid fa-chevron-down" id="locationToggleIcon"></i>
         </div>
       </button>
 
       <!-- Collapsible Card Panel -->
-      <div class="location-panel" id="locationPanel">
+      <div class="location-panel collapsed" id="locationPanel">
         <div class="location-card">
           <div class="location-city-heading">
             <i class="fa-solid fa-location-dot"></i>

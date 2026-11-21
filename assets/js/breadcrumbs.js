@@ -23,8 +23,23 @@ document.addEventListener("DOMContentLoaded", function () {
     container.parentElement.classList.add("breadcrumb-host");
   }
 
+  const formatBreadcrumbText = (str) => {
+    if (!str) return "";
+    return str
+      .trim()
+      .split(/\s+/)
+      .map((word) => {
+        if (!word) return "";
+        const lower = word.toLowerCase();
+        return lower.replace(/^([(\[{'"]*)(\w)(.*)$/, (match, prefix, firstChar, rest) => {
+          return prefix + firstChar.toUpperCase() + rest;
+        });
+      })
+      .join(" ");
+  };
+
   let breadcrumbHTML = '<ul class="breadcrumbs-list">';
-  breadcrumbHTML += '<li><a href="index.html"><i class="fa-solid fa-house"></i> HOME</a></li>';
+  breadcrumbHTML += '<li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>';
 
   const navLinksContainer = document.getElementById("navLinks");
   const matchingLink = navLinksContainer
@@ -46,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const directAnchor = currentElement.querySelector(":scope > a");
         if (directAnchor) {
           steps.unshift({
-            text: getCleanText(directAnchor),
+            text: formatBreadcrumbText(getCleanText(directAnchor)),
             href: directAnchor.getAttribute("href")
           });
         }
@@ -63,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (isLast) {
         breadcrumbHTML += `<li class="current-page">${step.text}</li>`;
       } else {
-        const fallbackHref = (step.href === "#" || !step.href) ? "product.html" : step.href;
+        const fallbackHref = (step.href === "#" || !step.href) ? "precast-concrete-products-in-pune.html" : step.href;
         breadcrumbHTML += `<li><a href="${fallbackHref}">${step.text}</a></li>`;
       }
     });
@@ -73,10 +88,10 @@ document.addEventListener("DOMContentLoaded", function () {
       cleanName = currentFile
         .replace(/(-manufacturer.*|-in-supplier-pune.*|-in-pune.*)\.html$/i, "")
         .replace(/[-_]/g, " ")
-        .trim()
-        .toUpperCase();
+        .trim();
     }
-    let pageTitle = cleanName || document.title.split("-")[0].split("|")[0].trim().toUpperCase();
+    let rawTitle = cleanName || document.title.split("-")[0].split("|")[0].trim();
+    let pageTitle = formatBreadcrumbText(rawTitle);
     breadcrumbHTML += `<li class="current-page">${pageTitle}</li>`;
   }
 
@@ -86,15 +101,16 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // Location We Serve Accordion Toggle Listener (Global Delegated)
-document.addEventListener("click", function (e) {
-  const btn = e.target.closest("#locationToggleBtn, .location-toggle-bar");
-  if (!btn) return;
-  const panel = document.getElementById("locationPanel") || btn.nextElementSibling;
-  if (!panel) return;
-  const isCollapsed = panel.classList.toggle("collapsed");
-  btn.setAttribute("aria-expanded", !isCollapsed);
-  const label = btn.querySelector("#locationToggleLabel, .location-bar-toggle-text span");
-  const icon = btn.querySelector("#locationToggleIcon, .location-bar-toggle-text i");
-  if (label) label.textContent = isCollapsed ? "CLICK TO EXPAND" : "CLICK TO CLOSE";
-  if (icon) icon.className = isCollapsed ? "fa-solid fa-chevron-down" : "fa-solid fa-chevron-up";
-});
+if (!window.__locationToggleInit) {
+  window.__locationToggleInit = true;
+  document.addEventListener("click", function (e) {
+    const btn = e.target.closest("#locationToggleBtn, .location-toggle-bar");
+    if (!btn) return;
+    const panel = document.getElementById("locationPanel") || btn.nextElementSibling;
+    if (!panel) return;
+    const isCollapsed = panel.classList.toggle("collapsed");
+    btn.setAttribute("aria-expanded", !isCollapsed);
+    const icon = btn.querySelector("#locationToggleIcon, .location-bar-toggle-text i");
+    if (icon) icon.className = isCollapsed ? "fa-solid fa-chevron-down" : "fa-solid fa-chevron-up";
+  });
+}

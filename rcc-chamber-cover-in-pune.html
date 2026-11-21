@@ -26,6 +26,100 @@
   <link rel="stylesheet" href="assets/css/responsive.css" />
   <link rel="stylesheet" href="assets/css/footer.css" />
   <link rel="stylesheet" href="assets/css/quote-modal.css" />
+
+  <!-- Schema Markup -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org/", 
+  "@type": "Product", 
+  "name": "Chamber Cover",
+  "image": "https://everlastpune.com/assets/img/logo.webp",
+  "description": "RCC Chamber Cover - Durable concrete cover designed to provide reliable protection and secure access to underground chambers.",
+  "brand": {
+    "@type": "Brand",
+    "name": "Everlast"
+  },
+  "offers": {
+    "@type": "Offer",
+    "url": "https://everlastpune.com",
+    "priceCurrency": "INR",
+    "price": "0",
+    "availability": "https://schema.org/InStock"
+  }
+}
+  </script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org/", 
+  "@type": "BreadcrumbList", 
+  "itemListElement": [{
+    "@type": "ListItem", 
+    "position": 1, 
+    "name": "Home",
+    "item": "https://everlastpune.com"  
+  },{
+    "@type": "ListItem", 
+    "position": 2, 
+    "name": "Our Products",
+    "item": "https://everlastpune.com/precast-concrete-products-in-pune.html"  
+  },{
+    "@type": "ListItem", 
+    "position": 3, 
+    "name": "Chamber Cover",
+    "item": "https://everlastpune.com/rcc-chamber-cover-in-pune.html"  
+  }]
+}
+  </script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is an RCC Chamber Cover used for?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "An RCC Chamber Cover is used to cover underground inspection chambers and utility openings. It helps protect the chamber while providing a secure covering for drainage and utility access points."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What material is used to manufacture Everlast RCC Chamber Covers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Everlast Chamber Covers are made from Reinforced Cement Concrete (RCC), providing a sturdy and durable covering for construction and infrastructure applications."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What sizes are available for RCC Chamber Covers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The listed heavy-duty RCC Chamber Cover is available in a 48 × 48-inch size."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the main features of Everlast Chamber Covers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The listed features include RCC material, a rectangular full-floor shape, heavy-duty type, and a grey colour. The product range also includes concrete covers with a 25 mm thickness and mosaic finish."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where can RCC Chamber Covers be used?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "RCC Chamber Covers can be used in residential, commercial, and infrastructure projects where inspection chambers and underground utility openings need protective covers."
+      }
+    }
+  ]
+}
+  </script>
 </head>
 <body>
 
@@ -243,19 +337,18 @@
   <section class="location-serve-section">
     <div class="location-serve-container">
       <!-- Toggle Bar -->
-      <button type="button" class="location-toggle-bar" id="locationToggleBtn" aria-expanded="true" aria-controls="locationPanel">
+      <button type="button" class="location-toggle-bar" id="locationToggleBtn" aria-expanded="false" aria-controls="locationPanel">
         <div class="location-bar-title">
           <i class="fa-solid fa-location-dot"></i>
           <span>LOCATION WE SERVE</span>
         </div>
         <div class="location-bar-toggle-text">
-          <span id="locationToggleLabel">CLICK TO CLOSE</span>
-          <i class="fa-solid fa-chevron-up" id="locationToggleIcon"></i>
+          <i class="fa-solid fa-chevron-down" id="locationToggleIcon"></i>
         </div>
       </button>
 
       <!-- Collapsible Card Panel -->
-      <div class="location-panel" id="locationPanel">
+      <div class="location-panel collapsed" id="locationPanel">
         <div class="location-card">
           <div class="location-city-heading">
             <i class="fa-solid fa-location-dot"></i>
