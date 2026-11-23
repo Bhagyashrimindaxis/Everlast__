@@ -284,49 +284,25 @@
   <div class="product-card">
     <img src="assets/img/Concrete Manhole Cover (1)___01.webp" alt="RCC Chamber Cover" title="RCC Chamber Cover" />
     <div class="info">
-      <h3>Chember Cover</h3>
-      <button class="toggle-btn">View Details</button>
+      <h3>RCC Chamber Cover</h3>
+      <button type="button" class="toggle-btn open-quote-modal" onclick="openQuoteModal(event)">Get Quote</button>
     </div>
     <div class="product-details">
-       <p><strong>Material:</strong> RCC</p>
-        <p><strong>Shape:</strong> Full Floor (Rectangular)</p>
-        <p><strong>Type Available:</strong> Heavy Duty</p>
-        <p><strong>Size</strong>	48 x 48 Inch</p>
-        <p><strong>Color:</strong> Gray</p>
-        <p><strong>Country of Origin:</strong> Made in India</p>
+      <p><strong>Material:</strong> RCC / Precast Concrete</p>
+      <p><strong>Shape:</strong> Full Floor (Rectangular / Square)</p>
+      <p><strong>Type Available:</strong> Heavy Duty</p>
+      <p><strong>Size:</strong> 48 x 48 Inch (1200 x 1200 mm)</p>
+      <p><strong>Thickness:</strong> 25 mm</p>
+      <p><strong>Finish:</strong> Non-Slip Mosaic Finish</p>
+      <p><strong>Color:</strong> Natural Concrete Gray</p>
+      <p><strong>Brand:</strong> Everlast</p>
+      <p><strong>Country of Origin:</strong> Made in India</p>
     </div>
   </div>
-      <div class="product-details" style="display: none; margin-top: 15px; font-size: 14px; color: #333;">
-        <p><strong>Material:</strong>	Concrete</p>
-        <p><strong>Thickness:</strong> 25 mm</p>
-        <p><strong>Finish:</strong>Mosaic</p>
-        <p><strong>Shape</strong> DD</p>
-        <p><strong>Color:</strong> Square</p>
-        <p><strong>Country of Origin:</strong> Made in India</p>
-      </div>
     </div>
 
 
-<script>
-  document.querySelectorAll('.toggle-btn').forEach(button => {
-    button.addEventListener('click', function () {
-      const card = this.closest('.product-card');
-      const isActive = card.classList.contains('active');
-
-      document.querySelectorAll('.product-card.active').forEach(c => {
-        c.classList.remove('active');
-        c.querySelector('.toggle-btn').textContent = 'View Details';
-      });
-
-      if (!isActive) {
-        card.classList.add('active');
-        this.textContent = 'Hide Details';
-      }
-    });
-  });
-</script>
-
-  <!-- Location We Serve Section (Everlast Brand Theme: Red & Dark) -->
+<!-- Location We Serve Section (Everlast Brand Theme: Red & Dark) -->
   <section class="location-serve-section">
     <div class="location-serve-container">
       <!-- Toggle Bar -->

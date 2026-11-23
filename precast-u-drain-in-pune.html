@@ -291,7 +291,7 @@
     <img src="assets/img/U Drain.webp" alt="Precast Concrete U Drain" title="Precast Concrete U Drain" />
     <div class="info">
       <h3>U Drain</h3>
-      <button class="toggle-btn">View Details</button>
+      <button type="button" class="toggle-btn open-quote-modal" onclick="openQuoteModal(event)">Get Quote</button>
     </div>
     <div class="product-details">
         <p><strong>Material:</strong> Concrete</p>
@@ -309,7 +309,7 @@
     <img src="assets/img/u-drain.webp" alt="Precast Concrete U Drain 300x300x2000" title="Precast Concrete U Drain 300x300x2000" />
     <div class="info">
       <h3>U-Drain 300×300×2000mm</h3>
-      <button class="toggle-btn">View Details</button>
+      <button type="button" class="toggle-btn open-quote-modal" onclick="openQuoteModal(event)">Get Quote</button>
     </div>
     <div class="product-details">
       <p><strong>Dimensions (W×H×L):</strong> 300 x 300 x 2000 mm</p>
@@ -327,7 +327,7 @@
     <img src="assets/img/u-drains.webp" alt="Precast Concrete U Drain 450x450x2000" title="Precast Concrete U Drain 450x450x2000" />
     <div class="info">
       <h3>U-Drain 450×450×2000mm</h3>
-      <button class="toggle-btn">View Details</button>
+      <button type="button" class="toggle-btn open-quote-modal" onclick="openQuoteModal(event)">Get Quote</button>
     </div>
     <div class="product-details">
       <p><strong>Dimensions (W×H×L):</strong> 450 x 450 x 2000 mm</p>
@@ -543,29 +543,7 @@
 </div>
 
 <!-- JS: Toggle product details -->
-<script>
-document.querySelectorAll('.toggle-btn').forEach(button => {
-    button.addEventListener('click', function () {
-      const card = this.closest('.product-card');
-      const isActive = card.classList.contains('active');
-
-      document.querySelectorAll('.product-card.active').forEach(c => {
-        c.classList.remove('active');
-        c.querySelector('.toggle-btn').textContent = 'View Details';
-      });
-
-      if (!isActive) {
-        card.classList.add('active');
-        this.textContent = 'Hide Details';
-      }
-    });
-  });
-</script>
-
-
-
-  
-  <script src="assets/js/breadcrumbs.js"></script>
+<script src="assets/js/breadcrumbs.js"></script>
   <script src="assets/js/quote-modal.js"></script>
 </body>
 </html>

@@ -287,32 +287,27 @@
     <img src="assets/img/Chequered Tiles.webp" alt="Heavy Duty Chequered Tiles" title="Heavy Duty Chequered Tiles" />
     <div class="info">
       <h3>Chequered Tiles</h3>
-      <button class="toggle-btn">View Details</button>
+      <button type="button" class="toggle-btn open-quote-modal" onclick="openQuoteModal(event)">Get Quote</button>
     </div>
     <div class="product-details">
+      <p><strong>Size / Dimensions:</strong> 12 x 12 Inches (300 x 300 mm)</p>
       <p><strong>Thickness:</strong> 25 mm</p>
-      <p><strong>Material:</strong> Concrete</p>
-      <p><strong>Color:</strong> Grey</p>
-      <p><strong>Shape:</strong> Square</p>
+      <p><strong>Material:</strong> High-Strength Precast Concrete</p>
+      <p><strong>Shape / Pattern:</strong> Square (Multi-Grid Chequered)</p>
+      <p><strong>Color:</strong> Terracotta Red / Concrete Grey</p>
+      <p><strong>Finish:</strong> Anti-Skid Textured Mosaic</p>
+      <p><strong>Type:</strong> Heavy Duty Outdoor Flooring</p>
       <p><strong>Brand:</strong> Everlast</p>
-   
-      <p><strong>Type:</strong> Outdoor</p>
+      <p><strong>Usage/Application:</strong> Parking Ramps, Pathways, Driveways & Public Plazas</p>
+      <p><strong>Country of Origin:</strong> Made in India</p>
     </div>
   </div>
-      <div class="product-details" style="display: none; margin-top: 15px; font-size: 14px; color: #333;">
-        <p><strong>Material:</strong>	Concrete</p>
-        <p><strong>Thickness:</strong> 25 mm</p>
-        <p><strong>Finish:</strong>Mosaic</p>
-        <p><strong>Shape</strong> DD</p>
-        <p><strong>Color:</strong> Square</p>
-        <p><strong>Country of Origin:</strong> Made in India</p>
-      </div>
 
       <div class="product-card">
     <img src="assets/img/chequered-tiles-yellow.webp" alt="9 Square Yellow Chequered Tile" title="9 Square Yellow Chequered Tile" />
     <div class="info">
       <h3>12 x 12 9 Square Yellow Tile</h3>
-      <button class="toggle-btn">View Details</button>
+      <button type="button" class="toggle-btn open-quote-modal" onclick="openQuoteModal(event)">Get Quote</button>
     </div>
     <div class="product-details">
       <p><strong>Size:</strong> 12 x 12 Inches</p>
@@ -331,7 +326,7 @@
     <img src="assets/img/chequered-tiles-red-yellow.webp" alt="9 Square Red-Yellow Chequered Tile" title="9 Square Red-Yellow Chequered Tile" />
     <div class="info">
       <h3>12 x 12 9 Square Red-Yellow Tile</h3>
-      <button class="toggle-btn">View Details</button>
+      <button type="button" class="toggle-btn open-quote-modal" onclick="openQuoteModal(event)">Get Quote</button>
     </div>
     <div class="product-details">
       <p><strong>Size:</strong> 12 x 12 Inches</p>
@@ -350,7 +345,7 @@
     <img src="assets/img/chequered-tiles-grey-black.webp" alt="9 Square Grey-Black Chequered Tile" title="9 Square Grey-Black Chequered Tile" />
     <div class="info">
       <h3>12 x 12 9 Square Grey-Black Tile</h3>
-      <button class="toggle-btn">View Details</button>
+      <button type="button" class="toggle-btn open-quote-modal" onclick="openQuoteModal(event)">Get Quote</button>
     </div>
     <div class="product-details">
       <p><strong>Size:</strong> 12 x 12 Inches</p>
@@ -368,26 +363,7 @@
     </div>
 
 
-<script>
-  document.querySelectorAll('.toggle-btn').forEach(button => {
-    button.addEventListener('click', function () {
-      const card = this.closest('.product-card');
-      const isActive = card.classList.contains('active');
-
-      document.querySelectorAll('.product-card.active').forEach(c => {
-        c.classList.remove('active');
-        c.querySelector('.toggle-btn').textContent = 'View Details';
-      });
-
-      if (!isActive) {
-        card.classList.add('active');
-        this.textContent = 'Hide Details';
-      }
-    });
-  });
-</script>
-
-  <!-- Location We Serve Section (Everlast Brand Theme: Red & Dark) -->
+<!-- Location We Serve Section (Everlast Brand Theme: Red & Dark) -->
   <section class="location-serve-section">
     <div class="location-serve-container">
       <!-- Toggle Bar -->
