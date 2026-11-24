@@ -23,6 +23,19 @@ img, video, iframe, canvas, svg {
   max-width: 100% !important;
 }
 
+.logo a {
+  display: inline-flex !important;
+  align-items: center !important;
+  text-decoration: none !important;
+  cursor: pointer !important;
+  transition: opacity 0.25s ease, transform 0.25s ease !important;
+}
+
+.logo a:hover {
+  opacity: 0.9 !important;
+  transform: scale(1.02) !important;
+}
+
 /* --- 2. Desktop Full HD (1920px) & Ultra-Wide Monitor Optimizations --- */
 @media (min-width: 1441px) {
   .topbar-container,

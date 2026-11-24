@@ -76,6 +76,14 @@ main > *:last-child,
   margin-bottom: 16px;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
   max-width: 200px;
+  text-decoration: none !important;
+  cursor: pointer !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.footer-logo-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
 }
 
 .footer-logo-card img {
@@ -252,19 +260,65 @@ main > *:last-child,
 
 /* --- Column 4: Location Map --- */
 .footer-map-card {
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background: #111;
-  width: 100%;
+  position: relative !important;
+  border-radius: 12px !important;
+  overflow: hidden !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  background: #111 !important;
+  width: 100% !important;
+}
+
+.footer-map-overlay {
+  position: absolute !important;
+  top: 8px !important;
+  left: 8px !important;
+  right: 8px !important;
+  background: rgba(15, 20, 26, 0.45) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.22) !important;
+  border-radius: 8px !important;
+  padding: 8px 12px !important;
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 8px !important;
+  z-index: 5 !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25) !important;
+  text-decoration: none !important;
+  transition: all 0.3s ease !important;
+  cursor: pointer !important;
+}
+
+.footer-map-overlay:hover {
+  background: rgba(15, 20, 26, 0.7) !important;
+  border-color: #8b1a1a !important;
+  box-shadow: 0 6px 18px rgba(139, 26, 26, 0.35) !important;
+}
+
+.footer-map-overlay i {
+  color: #ff3b3b !important;
+  font-size: 13px !important;
+  margin-top: 2px !important;
+  flex-shrink: 0 !important;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.8)) !important;
+}
+
+.footer-map-overlay span {
+  color: #ffffff !important;
+  font-size: 11px !important;
+  line-height: 1.4 !important;
+  font-weight: 500 !important;
+  font-family: 'Poppins', sans-serif !important;
+  display: block !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.85) !important;
 }
 
 .footer-map-card iframe {
   width: 100% !important;
   height: 240px !important;
-  display: block;
-  border: 0;
+  display: block !important;
+  border: 0 !important;
 }
 
 /* --- Bottom Copyright Bar --- */
