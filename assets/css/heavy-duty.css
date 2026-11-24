@@ -408,8 +408,9 @@
   /* --- Responsive Breakpoint Syncing --- */
   @media (max-width: 768px) {
     .breadcrumb-container {
-      /* FIX 2: Updates mobile spacing to align cleanly with your small layout structures */
-      padding: 100px 20px 10px 20px; 
+      position: relative !important;
+      top: auto !important;
+      padding: 0 0 10px 0 !important;
     }
     
     .breadcrumbs-list {

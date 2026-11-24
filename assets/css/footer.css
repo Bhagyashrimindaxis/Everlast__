@@ -344,6 +344,7 @@ main > *:last-child,
 }
 
 .site-footer .footer-dev-text a {
+  display: inline !important;
   color: #cbd5e1;
   text-decoration: none;
   font-weight: 500;

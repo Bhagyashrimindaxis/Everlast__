@@ -93,6 +93,28 @@
           <span>+91 9822088158</span>
         </a>
       </div>
+      <div class="topbar-left topbar-marquee-clone" aria-hidden="true">
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=everlastpune@gmail.com" target="_blank"
+          rel="noopener noreferrer" class="topbar-link" tabindex="-1">
+          <i class="fa-solid fa-envelope"></i>
+          <span class="topbar-email-text">everlastpune@gmail.com</span>
+        </a>
+        <a href="tel:+919822088158" class="topbar-link" tabindex="-1">
+          <i class="fa-solid fa-phone"></i>
+          <span>+91 9822088158</span>
+        </a>
+      </div>
+      <div class="topbar-left topbar-marquee-clone" aria-hidden="true">
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=everlastpune@gmail.com" target="_blank"
+          rel="noopener noreferrer" class="topbar-link" tabindex="-1">
+          <i class="fa-solid fa-envelope"></i>
+          <span class="topbar-email-text">everlastpune@gmail.com</span>
+        </a>
+        <a href="tel:+919822088158" class="topbar-link" tabindex="-1">
+          <i class="fa-solid fa-phone"></i>
+          <span>+91 9822088158</span>
+        </a>
+      </div>
     </div>
   </div>
 
@@ -105,7 +127,8 @@
     </div>
     <div class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></div>
     <ul class="nav-links" id="navLinks">
-      <li><a href="index.html">Home</a></li>
+<li><a href="index.html">Home</a></li>
+      <li><a href="about-us.html">About Us</a></li>
       <li>
         <a href="precast-concrete-products-in-pune.html" class="dropdown-toggle">Products <span class="dropdown-arrow">▾</span></a>
                         <ul class="dropdown-menu">
@@ -142,7 +165,6 @@
           <li><a href="customized-precast-concrete-products-in-pune.html">Customized Products</a></li>
         </ul>
       </li>
-      <li><a href="about-us.html">About Us</a></li>
       <li><a href="contact-us.html">Contact Us</a></li>
       <li><a href="javascript:void(0)" class="btn-get-quote open-quote-modal" onclick="openQuoteModal(event)">Get
           Quote</a></li>
@@ -163,24 +185,49 @@
       navbar.classList.toggle('scrolled', window.scrollY > 50);
     });
 
-    menuToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-      overlay.classList.toggle('show');
-    });
+    function updateMenuToggleIcon(isOpen) {
+      if (!menuToggle) return;
+      const icon = menuToggle.querySelector('i');
+      if (icon) {
+        if (isOpen) {
+          icon.className = 'fa-solid fa-xmark';
+        } else {
+          icon.className = 'fas fa-bars';
+        }
+      }
+    }
 
-    overlay.addEventListener('click', () => {
-      navLinks.classList.remove('active');
-      overlay.classList.remove('show');
+    if (menuToggle) {
+      menuToggle.addEventListener('click', () => {
+        const isActive = navLinks.classList.toggle('active');
+        if (overlay) overlay.classList.toggle('show', isActive);
+        updateMenuToggleIcon(isActive);
+      });
+    }
+
+    function closeMobileMenu() {
+      if (navLinks) navLinks.classList.remove('active');
+      if (overlay) overlay.classList.remove('show');
+      updateMenuToggleIcon(false);
       closeAllMenus();
-    });
+    }
+
+    if (overlay) {
+      overlay.addEventListener('click', closeMobileMenu);
+    }
 
     document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
       toggle.addEventListener('click', (e) => {
         if (window.innerWidth <= 768) {
-          e.preventDefault();
-          const menu = toggle.nextElementSibling;
-          menu.classList.toggle('show');
-          closeOthers(menu, '.dropdown-menu');
+          if (e.target.closest('.dropdown-arrow')) {
+            e.preventDefault();
+            e.stopPropagation();
+            const menu = toggle.nextElementSibling;
+            const isOpen = menu.classList.contains('show');
+            closeOthers(menu, '.dropdown-menu');
+            menu.classList.toggle('show', !isOpen);
+            toggle.classList.toggle('expanded', !isOpen);
+          }
         }
       });
     });
@@ -188,17 +235,27 @@
     document.querySelectorAll('.sub-dropdown > a').forEach(sub => {
       sub.addEventListener('click', (e) => {
         if (window.innerWidth <= 768) {
-          e.preventDefault();
-          const subMenu = sub.nextElementSibling;
-          subMenu.classList.toggle('show');
-          closeOthers(subMenu, '.sub-dropdown-menu');
+          if (e.target.closest('.dropdown-arrow')) {
+            e.preventDefault();
+            e.stopPropagation();
+            const subMenu = sub.nextElementSibling;
+            const isOpen = subMenu.classList.contains('show');
+            closeOthers(subMenu, '.sub-dropdown-menu');
+            subMenu.classList.toggle('show', !isOpen);
+            sub.classList.toggle('expanded', !isOpen);
+          }
         }
       });
     });
 
     function closeOthers(current, selector) {
       document.querySelectorAll(selector).forEach(menu => {
-        if (menu !== current) menu.classList.remove('show');
+        if (menu !== current) {
+          menu.classList.remove('show');
+          if (menu.previousElementSibling) {
+            menu.previousElementSibling.classList.remove('expanded');
+          }
+        }
       });
     }
 
@@ -206,18 +263,28 @@
       document.querySelectorAll('.dropdown-menu, .sub-dropdown-menu').forEach(menu => {
         menu.classList.remove('show');
       });
+      document.querySelectorAll('.dropdown-toggle, .sub-dropdown > a').forEach(toggle => {
+        toggle.classList.remove('expanded');
+      });
     }
 
-    document.querySelectorAll('.nav-links > li > a:not(.dropdown-toggle)').forEach(link => {
-      link.addEventListener('click', () => {
-        if (window.innerWidth <= 768) {
-          navLinks.classList.remove('active');
-          overlay.classList.remove('show');
-          closeAllMenus();
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', (e) => {
+        if (e.target.closest('.dropdown-arrow')) return;
+        if (window.innerWidth <= 768 && link.getAttribute('href') && !link.getAttribute('href').startsWith('javascript')) {
+          closeMobileMenu();
         }
       });
     });
-  </script>
+
+    document.querySelectorAll('.btn-get-quote').forEach(btn => {
+      btn.addEventListener('click', () => {
+        if (window.innerWidth <= 768) {
+          closeMobileMenu();
+        }
+      });
+    });
+</script>
 
 
   <!-- Banner Section -->
@@ -251,16 +318,30 @@
               referrerpolicy="strict-origin-when-cross-origin"></iframe>
           </div>
         </div>
-        <div class="card">
-          <div class="card-icon"><i class="fa-solid fa-phone"></i></div>
-          <h4>Phone</h4>
-          <p><a href="tel:+919822088158">+91 9822088158</a></p>
+        <!-- Phone Support Card -->
+        <div class="contact-detail-card phone-card">
+          <div class="cdc-header">
+            <div class="cdc-icon">
+              <i class="fa-solid fa-phone"></i>
+            </div>
+            <div class="cdc-info">
+              <h4>Phone Support</h4>
+              <p class="cdc-val"><a href="tel:+919822088158">+91 9822088158</a></p>
+            </div>
+          </div>
         </div>
-        <div class="card">
-          <div class="card-icon"><i class="fa-solid fa-envelope"></i></div>
-          <h4>Email</h4>
-          <p><a href="https://mail.google.com/mail/?view=cm&fs=1&to=everlastpune@gmail.com" target="_blank"
-              rel="noopener noreferrer">everlastpune@gmail.com</a></p>
+
+        <!-- Email Support Card -->
+        <div class="contact-detail-card email-card">
+          <div class="cdc-header">
+            <div class="cdc-icon">
+              <i class="fa-solid fa-envelope"></i>
+            </div>
+            <div class="cdc-info">
+              <h4>Email Inquiries</h4>
+              <p class="cdc-val"><a href="https://mail.google.com/mail/?view=cm&fs=1&to=everlastpune@gmail.com" target="_blank" rel="noopener noreferrer">everlastpune@gmail.com</a></p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -268,20 +349,61 @@
     <div class="contact-form">
       <h3 class="section-title">Request a Quote / Message</h3>
       <div class="form-box">
-        <form class="form-grid" id="whatsappForm">
-          <div class="input-group">
-            <input type="text" id="formName" placeholder="Your Full Name" required>
+        <form class="form-grid" id="whatsappForm" novalidate autocomplete="on">
+          <!-- Full Name & Phone Number (Matching Image 1 Two-Column Row) -->
+          <div class="form-row-2col full-width">
+            <div class="input-group">
+              <label class="form-field-label" for="formName">
+                <i class="fa-solid fa-user"></i> Full Name <span class="req-star">*</span>
+              </label>
+              <div class="input-with-icon">
+                <i class="fa-regular fa-user input-icon"></i>
+                <input type="text" id="formName" placeholder="Your full name" required autocomplete="name">
+              </div>
+              <div class="field-error" id="formNameError"></div>
+            </div>
+
+            <div class="input-group">
+              <label class="form-field-label" for="formPhone">
+                <i class="fa-solid fa-phone"></i> Phone Number <span class="req-star">*</span>
+              </label>
+              <div class="phone-input-wrap" id="formPhoneWrap">
+                <span class="phone-prefix">🇮🇳 +91 <i class="fa-solid fa-angle-down"></i></span>
+                <input type="tel" id="formPhone" placeholder="Enter 10-digit number" maxlength="10" required autocomplete="tel" inputmode="numeric">
+              </div>
+              <div class="field-error" id="formPhoneError"></div>
+            </div>
           </div>
-          <div class="input-group">
-            <input type="tel" id="formPhone" placeholder="Your Phone Number" required>
+
+          <!-- Email Address (Matching Image 1) -->
+          <div class="input-group full-width">
+            <label class="form-field-label" for="formEmail">
+              <i class="fa-solid fa-envelope"></i> Email Address <span class="req-star">*</span>
+            </label>
+            <div class="input-with-icon">
+              <i class="fa-regular fa-envelope input-icon"></i>
+              <input type="email" id="formEmail" placeholder="you@company.com" required autocomplete="email">
+            </div>
+            <div class="field-error" id="formEmailError"></div>
           </div>
-          <div class="input-group">
-            <input type="email" id="formEmail" placeholder="Your Email Address" required>
+
+          <!-- Delivery Location / Site Address -->
+          <div class="input-group full-width">
+            <label class="form-field-label" for="formAddress">
+              <i class="fa-solid fa-location-dot"></i> Delivery Location / Site Address <span class="req-star">*</span>
+            </label>
+            <div class="input-with-icon">
+              <i class="fa-solid fa-location-dot input-icon"></i>
+              <input type="text" id="formAddress" placeholder="e.g. Keshav Nagar, Pune or Site Location" required>
+            </div>
+            <div class="field-error" id="formAddressError"></div>
           </div>
-          <div class="input-group">
-            <input type="text" id="formAddress" placeholder="Delivery Location / Site Address" required>
-          </div>
-          <div class="input-group">
+
+          <!-- Product Category -->
+          <div class="input-group full-width">
+            <label class="form-field-label" for="formProduct">
+              <i class="fa-solid fa-shapes"></i> Select Product Category <span class="req-star">*</span>
+            </label>
             <select id="formProduct" required>
               <option value="" disabled selected>Select Product Category</option>
               <option value="Paver Blocks">Paver Blocks (Rough, Matte, Short Blast, Rubber Mould)</option>
@@ -292,21 +414,320 @@
               <option value="RCC Precast Bollards">RCC Precast Bollards</option>
               <option value="Customized Precast Products">Customized Precast Solutions</option>
             </select>
+            <div class="field-error" id="formProductError"></div>
           </div>
+
+          <!-- Message / Requirements (Matching Image 1) -->
           <div class="input-group full-width">
+            <label class="form-field-label" for="formMessage">
+              <i class="fa-solid fa-comment-dots"></i> Message / Requirements <span class="req-star">*</span>
+            </label>
             <textarea id="formMessage"
-              placeholder="Describe your requirement (Dimensions, quantity, color, thickness, etc.)..."
-              required></textarea>
+              placeholder="Describe your requirement (dimensions, quantity, color, thickness, or specific queries)..."
+              required rows="4"></textarea>
+            <div class="field-error" id="formMessageError"></div>
           </div>
+
           <div class="full-width">
-            <button type="submit" class="submit-btn">
-              <i class="fa-brands fa-whatsapp"></i> Submit to WhatsApp
+            <button type="submit" class="submit-btn" id="contactSubmitBtn">
+              <i class="fa-solid fa-paper-plane"></i> Send Message
             </button>
+          </div>
+
+          <!-- Thank You Message Banner (Below Send Message button) -->
+          <div class="form-success-banner full-width" id="formSuccessBanner" style="display: none;">
+            <div class="fsb-content">
+              <i class="fa-solid fa-circle-check"></i>
+              <div>
+                <strong>Thank you for submitting your message!</strong>
+                <p>Your details have been submitted. We will get in touch with you shortly.</p>
+              </div>
+            </div>
           </div>
         </form>
       </div>
     </div>
   </section>
+
+  <!-- Contact Form Validation & Submission Script -->
+  <script>
+    (function () {
+      const form = document.getElementById('whatsappForm');
+      if (!form) return;
+
+      const nameInput = document.getElementById('formName');
+      const phoneInput = document.getElementById('formPhone');
+      const phoneWrap = document.getElementById('formPhoneWrap');
+      const emailInput = document.getElementById('formEmail');
+      const addressInput = document.getElementById('formAddress');
+      const productSelect = document.getElementById('formProduct');
+      const messageInput = document.getElementById('formMessage');
+      const submitBtn = document.getElementById('contactSubmitBtn');
+      const successBanner = document.getElementById('formSuccessBanner');
+
+      let hasSubmitted = false;
+
+      function setError(inputEl, errorId, message) {
+        if (inputEl) inputEl.classList.add('is-invalid');
+        const errEl = document.getElementById(errorId);
+        if (errEl) {
+          errEl.innerHTML = `<i class="fa-solid fa-circle-exclamation"></i> ${message}`;
+          errEl.classList.add('show');
+        }
+        return false;
+      }
+
+      function clearError(inputEl, errorId) {
+        if (inputEl) inputEl.classList.remove('is-invalid');
+        const errEl = document.getElementById(errorId);
+        if (errEl) {
+          errEl.textContent = '';
+          errEl.classList.remove('show');
+        }
+        return true;
+      }
+
+      function validateName(showError) {
+        const val = (nameInput.value || '').trim();
+        if (!val) {
+          return showError ? setError(nameInput, 'formNameError', 'Full name is required.') : false;
+        }
+        if (val.length < 2) {
+          return showError ? setError(nameInput, 'formNameError', 'Name must be at least 2 characters.') : false;
+        }
+        if (/\d/.test(val)) {
+          return showError ? setError(nameInput, 'formNameError', 'Name must not contain numbers.') : false;
+        }
+        if (!/^[a-zA-Z\s'.]+$/.test(val)) {
+          return showError ? setError(nameInput, 'formNameError', 'Please use letters only (no symbols).') : false;
+        }
+        return clearError(nameInput, 'formNameError');
+      }
+
+      function validatePhone(showError) {
+        const val = (phoneInput.value || '').trim();
+        if (!val) {
+          if (phoneWrap) phoneWrap.classList.add('is-invalid');
+          return showError ? setError(phoneInput, 'formPhoneError', 'Phone number is required.') : false;
+        }
+        if (!/^\d{10}$/.test(val)) {
+          if (phoneWrap) phoneWrap.classList.add('is-invalid');
+          return showError ? setError(phoneInput, 'formPhoneError', 'Please enter a valid 10-digit mobile number.') : false;
+        }
+        if (!/^[6-9]\d{9}$/.test(val)) {
+          if (phoneWrap) phoneWrap.classList.add('is-invalid');
+          return showError ? setError(phoneInput, 'formPhoneError', 'Mobile number should start with 6, 7, 8, or 9.') : false;
+        }
+        if (phoneWrap) phoneWrap.classList.remove('is-invalid');
+        return clearError(phoneInput, 'formPhoneError');
+      }
+
+      function validateEmail(showError) {
+        const val = (emailInput.value || '').trim();
+        if (!val) {
+          return showError ? setError(emailInput, 'formEmailError', 'Email address is required.') : false;
+        }
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}$/;
+        if (!emailRegex.test(val)) {
+          return showError ? setError(emailInput, 'formEmailError', 'Please enter a valid email address (e.g. name@domain.com).') : false;
+        }
+        return clearError(emailInput, 'formEmailError');
+      }
+
+      function validateAddress(showError) {
+        const val = (addressInput.value || '').trim();
+        if (!val) {
+          return showError ? setError(addressInput, 'formAddressError', 'Delivery location / site address is required.') : false;
+        }
+        if (val.length < 3) {
+          return showError ? setError(addressInput, 'formAddressError', 'Please enter a more specific location.') : false;
+        }
+        return clearError(addressInput, 'formAddressError');
+      }
+
+      function validateProduct(showError) {
+        const val = (productSelect.value || '').trim();
+        if (!val) {
+          return showError ? setError(productSelect, 'formProductError', 'Please select a product category.') : false;
+        }
+        return clearError(productSelect, 'formProductError');
+      }
+
+      function validateMessage(showError) {
+        const val = (messageInput.value || '').trim();
+        if (!val) {
+          return showError ? setError(messageInput, 'formMessageError', 'Please describe your requirement.') : false;
+        }
+        if (val.length < 5) {
+          return showError ? setError(messageInput, 'formMessageError', 'Requirement description must be at least 5 characters.') : false;
+        }
+        return clearError(messageInput, 'formMessageError');
+      }
+
+      // Real-time input handling
+      if (phoneInput) {
+        phoneInput.addEventListener('input', function () {
+          // Immediately strip non-digits
+          this.value = this.value.replace(/\D/g, '').slice(0, 10);
+          if (hasSubmitted) {
+            validatePhone(true);
+          } else if (this.classList.contains('is-invalid') || (phoneWrap && phoneWrap.classList.contains('is-invalid')) || this.value.length === 10) {
+            validatePhone(false);
+          }
+        });
+        phoneInput.addEventListener('blur', function () {
+          if (this.value.trim()) validatePhone(true);
+        });
+      }
+
+      if (nameInput) {
+        // 1. Silently block number keys on keydown (no warning text)
+        nameInput.addEventListener('keydown', function (e) {
+          if (e.key >= '0' && e.key <= '9') {
+            e.preventDefault();
+          }
+        });
+
+        // 2. Silently filter input immediately: strip all digits and disallowed characters
+        nameInput.addEventListener('input', function () {
+          const cleaned = this.value.replace(/[^a-zA-Z\s'.]/g, '');
+          if (this.value !== cleaned) {
+            this.value = cleaned;
+          }
+          if (hasSubmitted) {
+            validateName(true);
+          } else if (this.classList.contains('is-invalid')) {
+            validateName(false);
+          }
+        });
+
+        // 3. Silently strip digits on paste
+        nameInput.addEventListener('paste', function () {
+          setTimeout(() => {
+            const cleaned = this.value.replace(/[^a-zA-Z\s'.]/g, '');
+            if (this.value !== cleaned) {
+              this.value = cleaned;
+            }
+            if (hasSubmitted) validateName(true);
+          }, 0);
+        });
+
+        nameInput.addEventListener('blur', function () {
+          if (this.value.trim()) validateName(true);
+        });
+      }
+
+      if (emailInput) {
+        emailInput.addEventListener('input', function () {
+          if (hasSubmitted) validateEmail(true);
+          else if (this.classList.contains('is-invalid')) validateEmail(false);
+        });
+        emailInput.addEventListener('blur', function () {
+          if (this.value.trim()) validateEmail(true);
+        });
+      }
+
+      if (addressInput) {
+        addressInput.addEventListener('input', function () {
+          if (hasSubmitted) validateAddress(true);
+          else if (this.classList.contains('is-invalid')) validateAddress(false);
+        });
+        addressInput.addEventListener('blur', function () {
+          if (this.value.trim()) validateAddress(true);
+        });
+      }
+
+      if (productSelect) {
+        productSelect.addEventListener('change', function () {
+          validateProduct(true);
+        });
+      }
+
+      if (messageInput) {
+        messageInput.addEventListener('input', function () {
+          if (hasSubmitted) validateMessage(true);
+          else if (this.classList.contains('is-invalid')) validateMessage(false);
+        });
+        messageInput.addEventListener('blur', function () {
+          if (this.value.trim()) validateMessage(true);
+        });
+      }
+
+      // Form submit handler
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        hasSubmitted = true;
+
+        const isNameValid = validateName(true);
+        const isPhoneValid = validatePhone(true);
+        const isEmailValid = validateEmail(true);
+        const isAddressValid = validateAddress(true);
+        const isProductValid = validateProduct(true);
+        const isMessageValid = validateMessage(true);
+
+        if (!isNameValid || !isPhoneValid || !isEmailValid || !isAddressValid || !isProductValid || !isMessageValid) {
+          const firstInvalid = form.querySelector('.is-invalid');
+          if (firstInvalid) firstInvalid.focus();
+          return;
+        }
+
+        const name = nameInput.value.trim();
+        const phone = phoneInput.value.trim();
+        const email = emailInput.value.trim();
+        const address = addressInput.value.trim();
+        const product = productSelect.value.trim();
+        const message = messageInput.value.trim();
+
+        // Button state
+        const originalBtnHtml = submitBtn.innerHTML;
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending Message...';
+
+        // 1. Send all customer info to admin email (everlastpune@gmail.com)
+        const emailPayload = {
+          _subject: `New Customer Message: ${name} (${product})`,
+          Customer_Name: name,
+          Phone_Number: `+91 ${phone}`,
+          Email_Address: email,
+          Delivery_Location: address,
+          Product_Category: product,
+          Requirement_Details: message,
+          Submitted_At: new Date().toLocaleString()
+        };
+
+        fetch('https://formsubmit.co/ajax/everlastpune@gmail.com', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify(emailPayload)
+        })
+        .then(response => response.json())
+        .catch(err => {
+          console.warn('Email dispatch via FormSubmit:', err);
+        })
+        .finally(() => {
+          // Show Thank you message banner below button
+          if (successBanner) {
+            successBanner.style.display = 'block';
+            successBanner.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          }
+
+          // Reset button and form (WhatsApp tab opening removed)
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = '<i class="fa-solid fa-check"></i> Message Sent!';
+
+          setTimeout(() => {
+            form.reset();
+            hasSubmitted = false;
+            if (phoneWrap) phoneWrap.classList.remove('is-invalid');
+            submitBtn.innerHTML = originalBtnHtml;
+          }, 3500);
+        });
+      });
+    })();
+  </script>
 
 
 

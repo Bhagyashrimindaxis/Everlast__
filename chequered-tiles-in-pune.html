@@ -142,6 +142,28 @@
           <span>+91 9822088158</span>
         </a>
       </div>
+      <div class="topbar-left topbar-marquee-clone" aria-hidden="true">
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=everlastpune@gmail.com" target="_blank"
+          rel="noopener noreferrer" class="topbar-link" tabindex="-1">
+          <i class="fa-solid fa-envelope"></i>
+          <span class="topbar-email-text">everlastpune@gmail.com</span>
+        </a>
+        <a href="tel:+919822088158" class="topbar-link" tabindex="-1">
+          <i class="fa-solid fa-phone"></i>
+          <span>+91 9822088158</span>
+        </a>
+      </div>
+      <div class="topbar-left topbar-marquee-clone" aria-hidden="true">
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=everlastpune@gmail.com" target="_blank"
+          rel="noopener noreferrer" class="topbar-link" tabindex="-1">
+          <i class="fa-solid fa-envelope"></i>
+          <span class="topbar-email-text">everlastpune@gmail.com</span>
+        </a>
+        <a href="tel:+919822088158" class="topbar-link" tabindex="-1">
+          <i class="fa-solid fa-phone"></i>
+          <span>+91 9822088158</span>
+        </a>
+      </div>
     </div>
   </div>
 
@@ -154,7 +176,8 @@
     </div>
     <div class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></div>
     <ul class="nav-links" id="navLinks">
-      <li><a href="index.html">Home</a></li>
+<li><a href="index.html">Home</a></li>
+      <li><a href="about-us.html">About Us</a></li>
       <li>
         <a href="precast-concrete-products-in-pune.html" class="dropdown-toggle">Products <span class="dropdown-arrow">▾</span></a>
                         <ul class="dropdown-menu">
@@ -191,7 +214,6 @@
           <li><a href="customized-precast-concrete-products-in-pune.html">Customized Products</a></li>
         </ul>
       </li>
-      <li><a href="about-us.html">About Us</a></li>
       <li><a href="contact-us.html">Contact Us</a></li>
       <li><a href="javascript:void(0)" class="btn-get-quote open-quote-modal" onclick="openQuoteModal(event)">Get Quote</a></li>
     </ul>
@@ -211,24 +233,49 @@
       navbar.classList.toggle('scrolled', window.scrollY > 50);
     });
 
-    menuToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-      overlay.classList.toggle('show');
-    });
+    function updateMenuToggleIcon(isOpen) {
+      if (!menuToggle) return;
+      const icon = menuToggle.querySelector('i');
+      if (icon) {
+        if (isOpen) {
+          icon.className = 'fa-solid fa-xmark';
+        } else {
+          icon.className = 'fas fa-bars';
+        }
+      }
+    }
 
-    overlay.addEventListener('click', () => {
-      navLinks.classList.remove('active');
-      overlay.classList.remove('show');
+    if (menuToggle) {
+      menuToggle.addEventListener('click', () => {
+        const isActive = navLinks.classList.toggle('active');
+        if (overlay) overlay.classList.toggle('show', isActive);
+        updateMenuToggleIcon(isActive);
+      });
+    }
+
+    function closeMobileMenu() {
+      if (navLinks) navLinks.classList.remove('active');
+      if (overlay) overlay.classList.remove('show');
+      updateMenuToggleIcon(false);
       closeAllMenus();
-    });
+    }
+
+    if (overlay) {
+      overlay.addEventListener('click', closeMobileMenu);
+    }
 
     document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
       toggle.addEventListener('click', (e) => {
         if (window.innerWidth <= 768) {
-          e.preventDefault();
-          const menu = toggle.nextElementSibling;
-          menu.classList.toggle('show');
-          closeOthers(menu, '.dropdown-menu');
+          if (e.target.closest('.dropdown-arrow')) {
+            e.preventDefault();
+            e.stopPropagation();
+            const menu = toggle.nextElementSibling;
+            const isOpen = menu.classList.contains('show');
+            closeOthers(menu, '.dropdown-menu');
+            menu.classList.toggle('show', !isOpen);
+            toggle.classList.toggle('expanded', !isOpen);
+          }
         }
       });
     });
@@ -236,17 +283,27 @@
     document.querySelectorAll('.sub-dropdown > a').forEach(sub => {
       sub.addEventListener('click', (e) => {
         if (window.innerWidth <= 768) {
-          e.preventDefault();
-          const subMenu = sub.nextElementSibling;
-          subMenu.classList.toggle('show');
-          closeOthers(subMenu, '.sub-dropdown-menu');
+          if (e.target.closest('.dropdown-arrow')) {
+            e.preventDefault();
+            e.stopPropagation();
+            const subMenu = sub.nextElementSibling;
+            const isOpen = subMenu.classList.contains('show');
+            closeOthers(subMenu, '.sub-dropdown-menu');
+            subMenu.classList.toggle('show', !isOpen);
+            sub.classList.toggle('expanded', !isOpen);
+          }
         }
       });
     });
 
     function closeOthers(current, selector) {
       document.querySelectorAll(selector).forEach(menu => {
-        if (menu !== current) menu.classList.remove('show');
+        if (menu !== current) {
+          menu.classList.remove('show');
+          if (menu.previousElementSibling) {
+            menu.previousElementSibling.classList.remove('expanded');
+          }
+        }
       });
     }
 
@@ -254,18 +311,28 @@
       document.querySelectorAll('.dropdown-menu, .sub-dropdown-menu').forEach(menu => {
         menu.classList.remove('show');
       });
+      document.querySelectorAll('.dropdown-toggle, .sub-dropdown > a').forEach(toggle => {
+        toggle.classList.remove('expanded');
+      });
     }
 
-    document.querySelectorAll('.nav-links > li > a:not(.dropdown-toggle)').forEach(link => {
-      link.addEventListener('click', () => {
-        if (window.innerWidth <= 768) {
-          navLinks.classList.remove('active');
-          overlay.classList.remove('show');
-          closeAllMenus();
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', (e) => {
+        if (e.target.closest('.dropdown-arrow')) return;
+        if (window.innerWidth <= 768 && link.getAttribute('href') && !link.getAttribute('href').startsWith('javascript')) {
+          closeMobileMenu();
         }
       });
     });
-  </script>
+
+    document.querySelectorAll('.btn-get-quote').forEach(btn => {
+      btn.addEventListener('click', () => {
+        if (window.innerWidth <= 768) {
+          closeMobileMenu();
+        }
+      });
+    });
+</script>
 
 <section style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;   background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),url('assets/img/Paver_Block_Home.webp'); background-size: cover; background-position: center; background-repeat: no-repeat; padding: 130px;">
 

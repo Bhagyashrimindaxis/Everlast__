@@ -85,6 +85,28 @@
           <span>+91 9822088158</span>
         </a>
       </div>
+      <div class="topbar-left topbar-marquee-clone" aria-hidden="true">
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=everlastpune@gmail.com" target="_blank"
+          rel="noopener noreferrer" class="topbar-link" tabindex="-1">
+          <i class="fa-solid fa-envelope"></i>
+          <span class="topbar-email-text">everlastpune@gmail.com</span>
+        </a>
+        <a href="tel:+919822088158" class="topbar-link" tabindex="-1">
+          <i class="fa-solid fa-phone"></i>
+          <span>+91 9822088158</span>
+        </a>
+      </div>
+      <div class="topbar-left topbar-marquee-clone" aria-hidden="true">
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=everlastpune@gmail.com" target="_blank"
+          rel="noopener noreferrer" class="topbar-link" tabindex="-1">
+          <i class="fa-solid fa-envelope"></i>
+          <span class="topbar-email-text">everlastpune@gmail.com</span>
+        </a>
+        <a href="tel:+919822088158" class="topbar-link" tabindex="-1">
+          <i class="fa-solid fa-phone"></i>
+          <span>+91 9822088158</span>
+        </a>
+      </div>
     </div>
   </div>
 
@@ -97,7 +119,8 @@
     </div>
     <div class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></div>
     <ul class="nav-links" id="navLinks">
-      <li><a href="index.html">Home</a></li>
+<li><a href="index.html">Home</a></li>
+      <li><a href="about-us.html">About Us</a></li>
       <li>
         <a href="precast-concrete-products-in-pune.html" class="dropdown-toggle">Products <span class="dropdown-arrow">▾</span></a>
                         <ul class="dropdown-menu">
@@ -134,7 +157,6 @@
           <li><a href="customized-precast-concrete-products-in-pune.html">Customized Products</a></li>
         </ul>
       </li>
-      <li><a href="about-us.html">About Us</a></li>
       <li><a href="contact-us.html">Contact Us</a></li>
       <li><a href="javascript:void(0)" class="btn-get-quote open-quote-modal" onclick="openQuoteModal(event)">Get Quote</a></li>
     </ul>
@@ -155,58 +177,271 @@
   </div>
 </section>
 
-<!-- Our Journey -->
-<section class="alt-section">
-  <div class="alt-container">
-    <div class="alt-text-content">
-      <h2>Our Journey</h2>
+<!-- Infrastructure Section -->
+<section class="wrapper" id="about-us">
+  <div class="container">
+    <div class="text about-fade-left">
+      <div class="about-badge-pill">
+        <span class="about-badge-dot"></span>
+        <span>ESTABLISHED 2009 • PUNE</span>
+      </div>
+      <h2 class="about-typing-h2">
+        <span id="typeLine1">Your Trusted</span><br>
+        <span id="typeLine2">Infrastructure Partner</span><span id="typeCursor" class="typewriter-cursor">|</span>
+      </h2>
       <p>
-        Established in 2009, Everlast is a leading firm in manufacturing and wholesaling <strong>Paver Blocks</strong>, <strong>Kerb Stones</strong>, <strong>Manhole Covers</strong>, and more.
-        <br><br>
-        Under the guidance of our mentor Mr. Chirag Deshmukh, we’ve built a reputation of trust and technical strength.
+        Established in 2009, Everlast is a leading firm in manufacturing and wholesaling Paver Blocks, Kerb Stones,
+        Manhole Covers, and more.
       </p>
+      <p>
+        Under the guidance of our mentor Mr. Chirag Deshmukh, we’ve built a reputation of trust and technical strength
+        — delivering exceptional quality and reliability for construction and landscaping projects across India.
+      </p>
+      <div class="about-btn-wrap" style="margin-top: 18px;">
+        <a href="#why-choose-us">
+          <span>Learn More</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
     </div>
-    <div class="alt-image-gallery">
-      <img src="assets/img/Pavere_Blocks.webp" alt="Paver Block" title="Paver Block">
+    <div class="gallery about-fade-right">
+      <div class="about-card about-card-top">
+        <div class="about-sheen-sweep"></div>
+        <img src="assets/img/everlast-products-infrastructure-collage.webp"
+          alt="Everlast Concrete Infrastructure Products" title="Everlast Concrete Infrastructure Products"
+          loading="lazy">
+      </div>
     </div>
   </div>
 </section>
+
+<!-- About Us Scroll Animation Trigger Script -->
+<script>
+  (function () {
+    const aboutSec = document.getElementById('about-us');
+    if (!aboutSec) return;
+
+    let typed = false;
+    function startTypewriter() {
+      if (typed) return;
+      typed = true;
+
+      const line1El = document.getElementById('typeLine1');
+      const line2El = document.getElementById('typeLine2');
+      const cursorEl = document.getElementById('typeCursor');
+      if (!line1El || !line2El) return;
+
+      const text1 = "Your Trusted";
+      const text2 = "Infrastructure Partner";
+
+      line1El.textContent = "";
+      line2El.textContent = "";
+      if (cursorEl) {
+        cursorEl.style.display = 'inline-block';
+        cursorEl.classList.remove('hidden');
+        line1El.parentElement.insertBefore(cursorEl, line1El.nextSibling);
+      }
+
+      let i = 0;
+      const speed1 = 45;
+      const speed2 = 38;
+
+      function typeLine1() {
+        if (i < text1.length) {
+          line1El.textContent += text1.charAt(i);
+          i++;
+          setTimeout(typeLine1, speed1);
+        } else {
+          setTimeout(() => {
+            if (cursorEl && line2El) {
+              line2El.parentElement.appendChild(cursorEl);
+            }
+            let j = 0;
+            function typeLine2() {
+              if (j < text2.length) {
+                line2El.textContent += text2.charAt(j);
+                j++;
+                setTimeout(typeLine2, speed2);
+              } else {
+                setTimeout(() => {
+                  if (cursorEl) cursorEl.classList.add('hidden');
+                }, 2000);
+              }
+            }
+            typeLine2();
+          }, 180);
+        }
+      }
+
+      setTimeout(typeLine1, 350);
+    }
+
+    if ('IntersectionObserver' in window) {
+      aboutSec.classList.add('about-init-anim');
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            aboutSec.classList.add('about-in-view');
+            startTypewriter();
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+      obs.observe(aboutSec);
+    } else {
+      startTypewriter();
+    }
+  })();
+</script>
 
 <!-- Info Sections -->
 
 
 <!-- Slider Section -->
 <section class="slider-section">
-  <h3 style="text-align:center;">OUR COMPANY ALBUM</h3>
+  <h3>OUR COMPANY ALBUM</h3>
   <div class="swiper mySwiper">
     <div class="swiper-wrapper">
-      <div class="swiper-slide"><img src="assets/img/Album1.webp" alt="Everlast Facility Gallery 1" title="Everlast Facility Gallery 1"><p>Paver Block</p></div>
-      <div class="swiper-slide"><img src="assets/img/Album2.webp" alt="Everlast Facility Gallery 2" title="Everlast Facility Gallery 2"><p>Kerb Stone</p></div>
-      <div class="swiper-slide"><img src="assets/img/Album3.webp" alt="Everlast Facility Gallery 3" title="Everlast Facility Gallery 3"><p>Manhole Cover</p></div>
-      <div class="swiper-slide"><img src="assets/img/Album4.webp" alt="Everlast Facility Gallery 4" title="Everlast Facility Gallery 4"><p>Drainage Slabs</p></div>
+      <div class="swiper-slide"><img src="assets/img/Paver_Block_Home.webp" alt="Paver Block" title="Paver Block"><p>Paver Block</p></div>
+      <div class="swiper-slide"><img src="assets/img/concrete_kerb.webp" alt="Kerb Stone" title="Kerb Stone"><p>Kerb Stone</p></div>
+      <div class="swiper-slide"><img src="assets/img/Rcc Manhole Cover And Frame.webp" alt="Manhole Cover" title="Manhole Cover"><p>Manhole Cover</p></div>
+      <div class="swiper-slide"><img src="assets/img/drain-cover.webp" alt="Drainage Slabs" title="Drainage Slabs"><p>Drainage Slabs</p></div>
+      <div class="swiper-slide"><img src="assets/img/chequered-tiles-grey-black.webp" alt="Chequered Tiles" title="Chequered Tiles"><p>Chequered Tiles</p></div>
+      <div class="swiper-slide"><img src="assets/img/u-drain.webp" alt="U-Drain" title="U-Drain"><p>U-Drain</p></div>
+      <div class="swiper-slide"><img src="assets/img/grass-paver.webp" alt="Grass Paver" title="Grass Paver"><p>Grass Paver</p></div>
+      <div class="swiper-slide"><img src="assets/img/Bolard_1.webp" alt="RCC Precast Bollard" title="RCC Precast Bollard"><p>RCC Precast Bollard</p></div>
     </div>
   </div>
 </section>
 
 <!-- Why Choose Us -->
-<section id="why-us">
-  <h3>Why Choose Us?</h3>
-  <p>Client trust, on-time delivery, affordable rates, and long-lasting product performance.</p>
-</section>
+<section class="wrapper bg" id="why-choose-us">
+  <h3 class="fade-in-up">
+    Why Choose Everlast?
+  </h3>
 
-<!-- Mission and Vision -->
-<section class="about-values">
-  <h3>Mission & Vision</h3>
-  <p>Our mission is to deliver sustainable and durable solutions. Our vision is to be a national leader in infrastructure innovation.</p>
-</section>
-
-<!-- Company Overview -->
-<section class="company-overview">
-  <div class="container">
-    <h3>Who We Are</h3>
-    <p>Based in Pune, Everlast manufactures top-grade paver blocks and related products backed by 15+ years of industry experience.</p>
+  <div class="container cards">
+    <div class="card">
+      <div class="card-icon">🏗️</div>
+      <h3 class="card-title">Superior Durability</h3>
+      <p class="card-text">Built tough to last through decades of use and weather.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">☀️</div>
+      <h3 class="card-title">Weather Resistant</h3>
+      <p class="card-text">Fade-resistant materials protect your investment for years.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🌿</div>
+      <h3 class="card-title">Eco-Friendly</h3>
+      <p class="card-text">Made with sustainable materials and minimal waste.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🏢</div>
+      <h3 class="card-title">Years of Expertise</h3>
+      <p class="card-text">Serving clients since 2009 with trusted quality and service.</p>
+    </div>
   </div>
 </section>
+
+<!-- Why Choose Us Scroll Animation Trigger Script -->
+<script>
+  (function () {
+    const whySec = document.getElementById('why-choose-us');
+    if (!whySec) return;
+    if ('IntersectionObserver' in window) {
+      whySec.classList.add('why-init-anim');
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            whySec.classList.add('why-in-view');
+            obs.unobserve(whySec);
+          }
+        });
+      }, { threshold: 0.15 });
+      obs.observe(whySec);
+    } else {
+      whySec.classList.add('why-in-view');
+    }
+  })();
+</script>
+
+<!-- Mission & Vision Section -->
+<section class="mission-vision-section" id="mission-vision">
+  <div class="mv-container">
+    <div class="mv-header">
+      <h2 class="mv-section-title">Mission & Vision</h2>
+    </div>
+
+    <div class="mv-grid">
+      <!-- Mission Card -->
+      <div class="mv-card mv-card-mission">
+        <div class="mv-card-accent-bar"></div>
+        <div class="mv-card-body">
+          <div class="mv-icon-wrapper">
+            <div class="mv-icon-box">
+              <i class="fa-solid fa-bullseye"></i>
+            </div>
+            <span class="mv-card-tag">PURPOSE & ACTION</span>
+          </div>
+          <h3 class="mv-card-title">Our Mission</h3>
+          <p class="mv-card-desc">
+            To manufacture and supply superior precast concrete products that blend long-lasting strength, precision engineering, and eco-conscious innovation for India's evolving infrastructure.
+          </p>
+          <ul class="mv-card-points">
+            <li><i class="fa-solid fa-circle-check"></i> Sustainable materials & low-waste manufacturing</li>
+            <li><i class="fa-solid fa-circle-check"></i> Certified compressive strength & high durability</li>
+            <li><i class="fa-solid fa-circle-check"></i> Prompt on-time supply for projects of every scale</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Vision Card -->
+      <div class="mv-card mv-card-vision">
+        <div class="mv-card-accent-bar"></div>
+        <div class="mv-card-body">
+          <div class="mv-icon-wrapper">
+            <div class="mv-icon-box">
+              <i class="fa-solid fa-eye"></i>
+            </div>
+            <span class="mv-card-tag">FUTURE & ASPIRATION</span>
+          </div>
+          <h3 class="mv-card-title">Our Vision</h3>
+          <p class="mv-card-desc">
+            To stand as India's premier benchmark in infrastructure solutions, recognized nationwide for relentless quality, technical mastery, and trusted partnerships.
+          </p>
+          <ul class="mv-card-points">
+            <li><i class="fa-solid fa-circle-check"></i> Pioneering next-generation permeable & precast designs</li>
+            <li><i class="fa-solid fa-circle-check"></i> Expanding reach across industrial, commercial & civic sectors</li>
+            <li><i class="fa-solid fa-circle-check"></i> Fostering lifelong trust through transparent craftsmanship</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Mission & Vision Scroll Animation Script -->
+<script>
+  (function () {
+    const mvSec = document.getElementById('mission-vision');
+    if (!mvSec) return;
+    if ('IntersectionObserver' in window) {
+      mvSec.classList.add('mv-init-anim');
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            mvSec.classList.add('mv-in-view');
+            obs.unobserve(mvSec);
+          }
+        });
+      }, { threshold: 0.15 });
+      obs.observe(mvSec);
+    } else {
+      mvSec.classList.add('mv-in-view');
+    }
+  })();
+</script>
 
 <!-- Milestones -->
 <section class="milestones">
@@ -220,14 +455,7 @@
 
 <!-- FAQ Section -->
 <section class="faq-section">
-<h3 style="
-  text-align: center;
-  font-size: 32px;
-  color: #8b1a1a;
-  text-shadow: 2px 2px 0 #d9a7a7, 4px 4px 0 #f0cfcf;
-">
-  Frequently Asked Questions
-</h3>
+  <h3>Frequently Asked Questions</h3>
 
   <div class="accordion">
     <div class="accordion-item">
@@ -247,16 +475,30 @@
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
-  new Swiper(".mySwiper", {
+  const albumSwiper = new Swiper(".mySwiper", {
     slidesPerView: 1,
     spaceBetween: 20,
-    autoplay: { delay: 3000 },
-    breakpoints: {
-      640: { slidesPerView: 1 },
-      768: { slidesPerView: 2 },
-      1024: { slidesPerView: 3 }
+    speed: 650,
+    loop: true,
+    loopAdditionalSlides: 3,
+    autoplay: {
+      delay: 1800,
+      disableOnInteraction: false,
+      pauseOnMouseEnter: false
     },
-    loop: true
+    grabCursor: true,
+    breakpoints: {
+      640: { slidesPerView: 2, spaceBetween: 16 },
+      768: { slidesPerView: 2, spaceBetween: 18 },
+      1024: { slidesPerView: 3, spaceBetween: 22 }
+    }
+  });
+
+  // Keep continuous swap active if tab becomes visible
+  document.addEventListener('visibilitychange', () => {
+    if (!document.hidden && albumSwiper && albumSwiper.autoplay) {
+      albumSwiper.autoplay.start();
+    }
   });
 
   document.querySelectorAll('.accordion-header').forEach(header => {
@@ -362,24 +604,49 @@
       navbar.classList.toggle('scrolled', window.scrollY > 50);
     });
 
-    menuToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-      overlay.classList.toggle('show');
-    });
+    function updateMenuToggleIcon(isOpen) {
+      if (!menuToggle) return;
+      const icon = menuToggle.querySelector('i');
+      if (icon) {
+        if (isOpen) {
+          icon.className = 'fa-solid fa-xmark';
+        } else {
+          icon.className = 'fas fa-bars';
+        }
+      }
+    }
 
-    overlay.addEventListener('click', () => {
-      navLinks.classList.remove('active');
-      overlay.classList.remove('show');
+    if (menuToggle) {
+      menuToggle.addEventListener('click', () => {
+        const isActive = navLinks.classList.toggle('active');
+        if (overlay) overlay.classList.toggle('show', isActive);
+        updateMenuToggleIcon(isActive);
+      });
+    }
+
+    function closeMobileMenu() {
+      if (navLinks) navLinks.classList.remove('active');
+      if (overlay) overlay.classList.remove('show');
+      updateMenuToggleIcon(false);
       closeAllMenus();
-    });
+    }
+
+    if (overlay) {
+      overlay.addEventListener('click', closeMobileMenu);
+    }
 
     document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
       toggle.addEventListener('click', (e) => {
         if (window.innerWidth <= 768) {
-          e.preventDefault();
-          const menu = toggle.nextElementSibling;
-          menu.classList.toggle('show');
-          closeOthers(menu, '.dropdown-menu');
+          if (e.target.closest('.dropdown-arrow')) {
+            e.preventDefault();
+            e.stopPropagation();
+            const menu = toggle.nextElementSibling;
+            const isOpen = menu.classList.contains('show');
+            closeOthers(menu, '.dropdown-menu');
+            menu.classList.toggle('show', !isOpen);
+            toggle.classList.toggle('expanded', !isOpen);
+          }
         }
       });
     });
@@ -387,17 +654,27 @@
     document.querySelectorAll('.sub-dropdown > a').forEach(sub => {
       sub.addEventListener('click', (e) => {
         if (window.innerWidth <= 768) {
-          e.preventDefault();
-          const subMenu = sub.nextElementSibling;
-          subMenu.classList.toggle('show');
-          closeOthers(subMenu, '.sub-dropdown-menu');
+          if (e.target.closest('.dropdown-arrow')) {
+            e.preventDefault();
+            e.stopPropagation();
+            const subMenu = sub.nextElementSibling;
+            const isOpen = subMenu.classList.contains('show');
+            closeOthers(subMenu, '.sub-dropdown-menu');
+            subMenu.classList.toggle('show', !isOpen);
+            sub.classList.toggle('expanded', !isOpen);
+          }
         }
       });
     });
 
     function closeOthers(current, selector) {
       document.querySelectorAll(selector).forEach(menu => {
-        if (menu !== current) menu.classList.remove('show');
+        if (menu !== current) {
+          menu.classList.remove('show');
+          if (menu.previousElementSibling) {
+            menu.previousElementSibling.classList.remove('expanded');
+          }
+        }
       });
     }
 
@@ -405,18 +682,28 @@
       document.querySelectorAll('.dropdown-menu, .sub-dropdown-menu').forEach(menu => {
         menu.classList.remove('show');
       });
+      document.querySelectorAll('.dropdown-toggle, .sub-dropdown > a').forEach(toggle => {
+        toggle.classList.remove('expanded');
+      });
     }
 
-    document.querySelectorAll('.nav-links > li > a:not(.dropdown-toggle)').forEach(link => {
-      link.addEventListener('click', () => {
-        if (window.innerWidth <= 768) {
-          navLinks.classList.remove('active');
-          overlay.classList.remove('show');
-          closeAllMenus();
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', (e) => {
+        if (e.target.closest('.dropdown-arrow')) return;
+        if (window.innerWidth <= 768 && link.getAttribute('href') && !link.getAttribute('href').startsWith('javascript')) {
+          closeMobileMenu();
         }
       });
     });
-  </script>
+
+    document.querySelectorAll('.btn-get-quote').forEach(btn => {
+      btn.addEventListener('click', () => {
+        if (window.innerWidth <= 768) {
+          closeMobileMenu();
+        }
+      });
+    });
+</script>
   <script src="assets/js/breadcrumbs.js"></script>
   <script src="assets/js/quote-modal.js"></script>
 </body>

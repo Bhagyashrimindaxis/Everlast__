@@ -718,25 +718,26 @@ body {
 
   .submit-btn {
     width: 100%;
-    padding: 14px;
-    background-color: #25d366; /* Standard WhatsApp Green Color */
-    color: white;
-    font-size: 15px;
+    padding: 14px 24px;
+    background: linear-gradient(135deg, #8b1a1a 0%, #aa2222 100%);
+    color: #ffffff;
+    font-size: 15.5px;
     font-weight: 600;
     border: none;
-    border-radius: 8px;
+    border-radius: 25px;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    transition: all 0.3s ease;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
-    box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
+    box-shadow: 0 6px 18px rgba(139, 26, 26, 0.3);
   }
 
   .submit-btn:hover {
-    background-color: #20ba56;
+    background: linear-gradient(135deg, #a52323 0%, #c42d2d 100%);
     transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(139, 26, 26, 0.45);
   }
   
   .submit-btn:active {
@@ -874,3 +875,363 @@ body {
     }
 
 }
+
+/* ==========================================================================
+   ENHANCED CONTACT CARDS & FORM VALIDATION STYLES
+   ========================================================================== */
+
+/* Enhanced Phone & Email Cards */
+.contact-detail-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 22px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-left: 4px solid #8b1a1a;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.contact-detail-card:hover {
+  transform: translateX(5px);
+  box-shadow: 0 8px 24px rgba(139, 26, 26, 0.12);
+}
+
+.cdc-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.cdc-icon {
+  background: linear-gradient(135deg, rgba(139, 26, 26, 0.1) 0%, rgba(139, 26, 26, 0.18) 100%);
+  color: #8b1a1a;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+  transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+}
+
+.contact-detail-card:hover .cdc-icon {
+  transform: scale(1.08);
+  background: linear-gradient(135deg, #8b1a1a 0%, #a52323 100%);
+  color: #ffffff;
+}
+
+.cdc-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  flex: 1;
+}
+
+.cdc-tag {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  color: #8b1a1a;
+  text-transform: uppercase;
+}
+
+.cdc-info h4 {
+  color: #111111 !important;
+  font-size: 17px !important;
+  font-weight: 700 !important;
+  margin: 0 !important;
+  font-family: 'Poppins', sans-serif;
+}
+
+.cdc-val {
+  margin: 2px 0 4px !important;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+}
+
+.cdc-val a {
+  color: #8b1a1a !important;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.cdc-val a:hover {
+  color: #aa2222 !important;
+  text-decoration: underline;
+}
+
+.cdc-subtext {
+  font-size: 12.5px;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.cdc-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-top: 12px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.cdc-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.cdc-btn-call {
+  background: #8b1a1a;
+  color: #ffffff !important;
+}
+
+.cdc-btn-call:hover {
+  background: #aa2222;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(139, 26, 26, 0.3);
+}
+
+.cdc-btn-wa {
+  background: #25d366;
+  color: #ffffff !important;
+}
+
+.cdc-btn-wa:hover {
+  background: #20ba56;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+}
+
+.cdc-btn-mail {
+  background: #f8fafc;
+  color: #334155 !important;
+  border: 1px solid #cbd5e1;
+}
+
+.cdc-btn-mail:hover {
+  background: #8b1a1a;
+  color: #ffffff !important;
+  border-color: #8b1a1a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(139, 26, 26, 0.25);
+}
+
+/* Form Validation Styles */
+.input-group {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.field-error {
+  display: none;
+  color: #dc2626;
+  font-size: 12px;
+  font-weight: 500;
+  margin-top: 5px;
+  line-height: 1.4;
+}
+
+.field-error.show {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.field-error i {
+  font-size: 12px;
+  flex-shrink: 0;
+}
+
+.input-group input.is-invalid,
+.input-group select.is-invalid,
+.input-group textarea.is-invalid {
+  border-color: #dc2626 !important;
+  background-color: #fef2f2 !important;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.15) !important;
+}
+
+/* Thank You Success Banner */
+.form-success-banner {
+  grid-column: 1 / -1;
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  border-radius: 12px;
+  padding: 18px 20px;
+  margin-top: 14px;
+  margin-bottom: 0;
+  box-shadow: 0 4px 16px rgba(16, 185, 129, 0.12);
+  animation: fadeInDown 0.4s ease-out;
+}
+
+.fsb-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.fsb-content i {
+  color: #059669;
+  font-size: 24px;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.fsb-content strong {
+  display: block;
+  color: #065f46;
+  font-size: 15.5px;
+  margin-bottom: 4px;
+}
+
+.fsb-content p {
+  color: #047857;
+  font-size: 13.5px;
+  margin: 0 !important;
+  line-height: 1.5;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================================================
+   FORM LABELS & IMAGE 1 INPUT LAYOUT STYLING
+   ========================================================================== */
+.form-row-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 600px) {
+  .form-row-2col {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+}
+
+.form-field-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 7px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.form-field-label i {
+  color: #2563eb;
+  font-size: 14px;
+}
+
+.req-star {
+  color: #ef4444;
+  font-weight: 700;
+  margin-left: 2px;
+}
+
+.input-with-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.input-with-icon .input-icon {
+  position: absolute;
+  left: 14px;
+  color: #94a3b8;
+  font-size: 14px;
+  pointer-events: none;
+  transition: color 0.2s ease;
+}
+
+.input-with-icon input {
+  padding-left: 42px !important;
+}
+
+.input-with-icon input:focus + .input-icon,
+.input-with-icon:focus-within .input-icon {
+  color: #8b1a1a;
+}
+
+/* Phone input wrap with India flag & +91 prefix (Matching Image 1) */
+.phone-input-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fafafa;
+  overflow: hidden;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.phone-prefix {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 14px;
+  background: #f1f5f9;
+  border-right: 1px solid #e2e8f0;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #334155;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.phone-prefix i {
+  font-size: 10px;
+  color: #64748b;
+  margin-left: 2px;
+}
+
+.phone-input-wrap input {
+  flex: 1;
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 12px 14px !important;
+  font-size: 14px;
+  border-radius: 0 !important;
+}
+
+.phone-input-wrap:focus-within {
+  border-color: #8b1a1a;
+  box-shadow: 0 0 0 3px rgba(139, 26, 26, 0.12);
+  background-color: #ffffff;
+}
+
+.phone-input-wrap.is-invalid {
+  border-color: #dc2626 !important;
+  background-color: #fef2f2 !important;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.15) !important;
+}
+
+

@@ -2035,3 +2035,9 @@ footer .copy {
     height: clamp(260px, 50vw, 380px) !important;
   }
 }
+
+/* Footer Bottom Bar Developer Link Override */
+.site-footer .footer-dev-text a,
+.footer-dev-text a {
+  display: inline !important;
+}
